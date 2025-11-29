@@ -36,6 +36,19 @@ The `FinalSubmission/` folder contains the official submitted documents:
 - Blockchain Security and Fraud Detection
 - Digital Banking Innovation
 
+## Documentation
+
+Detailed project documentation is available in the [`docs/`](docs/) folder:
+
+| Document | Description |
+|----------|-------------|
+| [Overview](docs/README.md) | Project overview and quick links |
+| [Budget](docs/Budget.md) | Detailed budget breakdown by category |
+| [Workshop Content](docs/Workshop-Content.md) | Full 3-day program and sessions |
+| [Timeline](docs/Timeline.md) | Project milestones and Gantt summary |
+| [Partners](docs/Partners.md) | Institutional partners and collaborators |
+| [Application Materials](docs/Application-Materials.md) | CCG application summary |
+
 ## Archive
 
 The `archive/` folder contains working drafts, scripts, and intermediate files used during application preparation.
