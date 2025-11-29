@@ -1,0 +1,20 @@
+# Project Overview and Context
+
+This three-day academic workshop at **American University of Sharjah** (**April 21-23, 2026**) serves as the primary venue for disseminating research findings and fostering knowledge exchange in **AI applications for digital finance** between **FHGR** (Switzerland) and **AUS** (UAE). The event brings together **80-100 participants** (**60% academic**, **40% industry**) to share research methodologies, practical implementations, and regulatory perspectives that advance responsible AI adoption in finance.
+
+**Collaboration Foundation.** The workshop builds upon an exceptionally productive **7-year partnership** between Prof. Joerg Osterrieder (FHGR) and Prof. Stephen Chan (AUS) that has yielded **four publications** on blockchain security, fraud detection, and digital assets, secured research grants exceeding **CHF 50,000**, and includes **Dr. Hana Sulieman (AUS)** as co-organizer, demonstrating substantial institutional commitment.
+
+**Workshop Audiences.** The workshop disseminates findings to three key audiences. The academic community (**60%**) includes researchers from Swiss and MENA universities receiving AI finance methodologies, frameworks, and funding opportunities through **15-20 paper presentations** and proceedings. Financial industry representatives (**40%**) include professionals from **DIFC**, **Emirates NBD**, **First Abu Dhabi Bank**, and fintech companies gaining insights on AI implementation and compliance through case studies and roundtables. Policy makers including **FINMA** and UAE regulatory officials access recommendations via white papers and panels on AI governance.
+
+**Three-Day Structure.** **Day 1** focuses on research frontiers with an international keynote on Large Language Models, **5-7 academic papers**, and a panel on research priorities. **Day 2** addresses industry applications through a banking executive keynote, **3-4 case study presentations**, an Explainable AI workshop, and implementation roundtables. **Day 3** includes doctoral training, **4-5 early-career presentations**, **4 working group formation sessions**, and **AUS-FHGR bilateral agreement signing**. The hybrid format enables global participation through live streaming.
+
+**Immediate Deliverables.** Workshop proceedings with **15-20 peer-reviewed papers** in open access format, a white paper on AI adoption in Swiss-MENA financial sectors, an online repository of presentations and resources, **4 thematic working groups**, and the **AUS-FHGR bilateral research agreement** formalizing the collaboration framework.
+
+**Long-term Impact.** The workshop initiates **3-5 joint research proposals** for bilateral funding programs, establishes pathways for researcher mobility and joint doctoral supervision, enables knowledge transfer between Swiss precision banking and MENA's dynamic markets, and plans a **2027 follow-up workshop** in Switzerland.
+
+**Strategic Significance.** This initiative addresses the critical need for responsible AI adoption in finance by leveraging complementary strengths: Switzerland's robust regulatory frameworks and financial technology expertise combined with UAE's innovation-friendly environment and evolving digital finance ecosystem. The workshop establishes formal mechanisms for continuous academia-industry dialogue, ensuring research addresses real-world challenges while maintaining scientific rigor and contributing to global best practices in AI governance for financial services.
+
+**Funding and Partnership.** The **72% co-funding** (**CHF 13,000** of **CHF 18,000** total) demonstrates exceptional institutional commitment. **AUS** provides venue, equipment, and staff time valued at **CHF 11,100**. **FHGR** contributes staff time, marketing, and administrative support valued at **CHF 2,500**. Industry contributors provide keynote presentations and practitioner perspectives. The **CCG support of CHF 5,000** catalyzes this investment, enabling professional event organization, international speaker participation, and broad dissemination benefiting the Swiss-MENA research community.
+
+---
+Character count: 3,869 (including spaces)

@@ -1,0 +1,495 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{qrcode}
+\usepackage{multirow}
+
+% Define colors
+\definecolor{headerblue}{RGB}{0,51,102}
+\definecolor{lightgray}{RGB}{245,245,245}
+\definecolor{midgray}{RGB}{128,128,128}
+
+% Section formatting
+\titleformat{\section}{\normalfont\Large\bfseries\color{headerblue}}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+% Page style
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small AI for Digital Finance Workshop}
+\fancyhead[R]{\small April 21-23, 2026}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Remove paragraph indentation
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\begin{document}
+
+% Title page
+\thispagestyle{empty}
+\begin{center}
+\vspace*{2cm}
+
+{\Huge\bfseries AI for Digital Finance}\\[0.5cm]
+{\Large Launching the Swiss-MENA Research Network}\\[1cm]
+
+\vspace{1cm}
+
+{\Large\bfseries International Workshop}\\[0.3cm]
+{\large April 21-23, 2026}\\[1cm]
+
+\vspace{1cm}
+
+{\large American University of Sharjah\\
+United Arab Emirates}\\[2cm]
+
+\vspace{1cm}
+
+{\large Co-organized by}\\[0.5cm]
+{\large\bfseries University of Applied Sciences of the Grisons (FHGR)}\\
+Switzerland\\[0.3cm]
+{\large\bfseries American University of Sharjah (AUS)}\\
+United Arab Emirates\\[2cm]
+
+\vspace{1cm}
+
+{\large Supported by}\\
+{\large Leading House MENA\\
+Connect \& Collaborate Grant}
+
+\vfill
+
+\begin{tabular}{cc}
+\qrcode[height=2cm]{https://workshop-ai-finance-mena.org} &
+\begin{tabular}{l}
+\Large \#AIFinanceMENA\\
+\small Follow us on social media\\
+\small Visit our website
+\end{tabular}
+\end{tabular}
+
+\end{center}
+
+\newpage
+
+% Network Vision Page
+\thispagestyle{fancy}
+\section*{Swiss-MENA AI Finance Research Network Vision}
+
+The Swiss-MENA AI Finance Research Network represents a transformative initiative to establish sustainable collaboration between two of the world's most dynamic financial innovation ecosystems. This network aims to bridge academic excellence with industry practice, creating a platform for continuous knowledge exchange and collaborative innovation in artificial intelligence applications for finance.
+
+\subsection*{Our Mission}
+
+To foster interdisciplinary research collaboration between Switzerland and the MENA region, advancing the responsible development and implementation of AI technologies in financial services while addressing the unique challenges and opportunities of both regions.
+
+\subsection*{Strategic Objectives}
+
+\begin{itemize}[leftmargin=*]
+\item \textbf{Research Excellence}: Conduct collaborative research that advances the theoretical foundations and practical applications of AI in finance
+\item \textbf{Knowledge Transfer}: Facilitate bi-directional knowledge flow between Swiss precision in financial technology and MENA's rapidly evolving digital finance landscape
+\item \textbf{Capacity Building}: Develop next-generation researchers and practitioners equipped to lead AI transformation in financial services
+\item \textbf{Industry Partnership}: Create sustainable partnerships between academic institutions and financial industry stakeholders
+\item \textbf{Policy Influence}: Contribute to evidence-based policy development for AI governance in financial services
+\end{itemize}
+
+\subsection*{Network Activities}
+
+The network will pursue its objectives through:
+\begin{itemize}[leftmargin=*]
+\item Annual workshops alternating between Switzerland and MENA locations
+\item Joint research projects addressing regional and global challenges
+\item Researcher and doctoral student exchange programs
+\item Collaborative funding applications for large-scale research programs
+\item Industry advisory boards ensuring practical relevance
+\item Open-access publication of research findings and best practices
+\end{itemize}
+
+\subsection*{Expected Impact}
+
+By 2031, the Swiss-MENA AI Finance Research Network aims to:
+\begin{itemize}[leftmargin=*]
+\item Establish 20+ institutional partnerships across both regions
+\item Produce 50+ joint publications in leading journals
+\item Secure CHF 5+ million in collaborative research funding
+\item Train 30+ doctoral students through exchange programs
+\item Influence policy frameworks in both regions
+\item Create sustainable innovation pathways for financial technology transfer
+\end{itemize}
+
+This workshop marks the formal launch of this ambitious initiative, bringing together the founding members who will shape the network's trajectory and establish the collaborative frameworks necessary for long-term success.
+
+\newpage
+
+% Welcome Message
+\section*{Welcome Message}
+
+Dear Colleagues and Partners,
+
+It is our great pleasure to welcome you to this landmark workshop on AI for Digital Finance, marking the official launch of the Swiss-MENA AI Finance Research Network.
+
+This three-day event represents the culmination of extensive collaboration between our institutions and the beginning of an exciting new chapter in international research partnership. The workshop brings together leading academics, industry practitioners, and policy makers to explore how artificial intelligence is transforming financial services and to establish collaborative frameworks for addressing shared challenges.
+
+The program has been carefully designed to maximize knowledge exchange and partnership formation. Day 1 focuses on research foundations, showcasing the latest academic advances in AI applications for finance. Day 2 bridges to practical implementation, featuring industry case studies and real-world applications. Day 3 looks to the future, with doctoral training, working group formation, and the formal network launch through our MoU signing ceremony.
+
+We are particularly grateful to the Leading House MENA for their support through the Connect \& Collaborate Grant, which has made this workshop possible. We also thank our institutional partners, industry sponsors, and all participants who have committed their time and expertise to this initiative.
+
+We encourage you to actively engage throughout the workshop - attend sessions, ask questions, share insights, and most importantly, build connections that will drive future collaboration. The success of our network depends on the relationships formed and strengthened during these three days.
+
+Welcome to Sharjah, welcome to AUS, and welcome to the Swiss-MENA AI Finance Research Network!
+
+\vspace{0.5cm}
+
+\begin{tabular}{@{}ll@{}}
+Prof. Dr. Joerg Osterrieder & Prof. Dr. Stephen Chan\\
+University of Applied Sciences & American University of Sharjah\\
+of the Grisons (FHGR) & United Arab Emirates\\
+Switzerland &\\
+\end{tabular}
+
+\newpage
+
+% Venue Information
+\section*{Venue Information}
+
+\subsection*{Conference Location}
+
+All workshop sessions will be held at the:\\[0.3cm]
+\textbf{Conference Center}\\
+American University of Sharjah\\
+University City, Sharjah\\
+United Arab Emirates
+
+\subsection*{Room Allocations}
+
+\begin{tabular}{ll}
+\textbf{Main Auditorium} & Plenary sessions, keynotes, panels\\
+\textbf{Conference Room A} & Coffee breaks and networking\\
+\textbf{Conference Room B} & Lunch and catering\\
+\textbf{Seminar Room 1} & Working group sessions (Day 3)\\
+\textbf{Seminar Room 2} & Working group sessions (Day 3)\\
+\textbf{Faculty Lounge} & Speaker preparation and VIP meetings\\
+\end{tabular}
+
+\subsection*{Campus Map}
+
+\begin{center}
+\framebox[0.9\textwidth][c]{
+\parbox{0.85\textwidth}{
+\vspace{8cm}
+\centering
+[AUS Campus Map]\\
+\small Conference Center is located in Building M, Ground Floor\\
+\small Parking available in Lot B (visitor parking)\\
+\vspace{0.5cm}
+}}
+\end{center}
+
+\subsection*{Transportation and Access}
+
+\begin{itemize}[leftmargin=*]
+\item \textbf{From Dubai International Airport}: 30 minutes by taxi (approximately 80 AED)
+\item \textbf{From Sharjah International Airport}: 15 minutes by taxi (approximately 40 AED)
+\item \textbf{Parking}: Complimentary parking available in Visitor Lot B
+\item \textbf{Campus Shuttle}: Available between buildings every 15 minutes
+\end{itemize}
+
+\subsection*{Important Contacts}
+
+\begin{tabular}{ll}
+\textbf{Workshop Secretariat} & +971 6 515 XXXX\\
+\textbf{Emergency (Campus Security)} & +971 6 515 5555\\
+\textbf{IT Support} & +971 6 515 2222\\
+\textbf{Conference Center Reception} & +971 6 515 3333\\
+\end{tabular}
+
+\newpage
+
+% Program at a Glance
+\section*{Program at a Glance}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\rowcolor{lightgray}
+\textbf{Time} & \textbf{Day 1 (Apr 21)} & \textbf{Day 2 (Apr 22)} & \textbf{Day 3 (Apr 23)}\\
+& \textit{Research Frontiers} & \textit{Industry Applications} & \textit{Network Launch}\\
+\hline
+08:30-09:00 & Registration & Welcome Coffee & Welcome Coffee\\
+\hline
+09:00-09:30 & Opening Ceremony & \multirow{2}{*}{Keynote 2} & Doctoral Training\\
+\cline{1-1}\cline{3-4}
+09:30-10:00 & \multirow{2}{*}{Keynote 1} & & Workshop\\
+\cline{1-1}\cline{3-4}
+10:00-10:30 & & \multirow{2}{*}{Coffee Break} & \multirow{2}{*}{Coffee Break}\\
+\cline{1-2}
+10:30-11:00 & Coffee Break & &\\
+\hline
+11:00-12:30 & Research Papers I & Industry Cases & PhD Presentations\\
+\hline
+12:30-14:00 & Lunch \& Posters & Lunch \& Networking & Lunch \& Career Fair\\
+\hline
+14:00-15:30 & Research Papers II & Explainable AI & Working Groups\\
+\hline
+15:30-16:00 & Coffee Break & Coffee Break & Coffee Break\\
+\hline
+16:00-17:00 & Panel Discussion & Industry Roundtable & Network Launch\\
+\hline
+17:00-17:30 & Day 1 Summary & Day 2 Summary & Closing Ceremony\\
+\hline
+18:00-20:00 & Welcome Reception & Free Evening & Farewell Dinner\\
+\hline
+\end{tabular}
+\end{center}
+
+\newpage
+
+% Day 1 Program
+\section*{Day 1: Tuesday, April 21, 2026}
+\subsection*{Research Frontiers in AI for Finance}
+
+\textbf{08:30 - 09:00} \quad \textbf{Registration and Welcome Coffee}\\
+\textit{Location: Conference Center Foyer}
+
+\textbf{09:00 - 09:30} \quad \textbf{Opening Ceremony}\\
+\textit{Location: Main Auditorium}\\
+Welcome Address - Prof. Stephen Chan, AUS\\
+Opening Remarks - Prof. Joerg Osterrieder, FHGR\\
+Institutional Greetings - AUS Leadership\\
+Workshop Objectives and Structure - Organizing Committee
+
+\textbf{09:30 - 10:30} \quad \textbf{Keynote Address 1}\\
+\textit{Large Language Models in Financial Services: Opportunities and Challenges}\\
+Distinguished International Speaker (TBC)\\
+This keynote explores the transformative potential of LLMs in financial analysis, risk assessment, and regulatory compliance, addressing both technical capabilities and implementation challenges.
+
+\textbf{10:30 - 11:00} \quad \textbf{Coffee Break and Networking}\\
+\textit{Location: Conference Room A}
+
+\textbf{11:00 - 12:30} \quad \textbf{Research Session 1: AI Methods for Financial Markets}\\
+\textit{Chair: Prof. Stephen Chan, AUS}\\
+This session presents recent advances in machine learning applications for market prediction, portfolio optimization, and algorithmic trading, featuring contributions from Swiss and MENA researchers.
+\begin{itemize}
+\item Deep Learning Approaches for Market Prediction
+\item Reinforcement Learning in Portfolio Management
+\item Natural Language Processing for Financial Sentiment Analysis
+\item Neural Network Architectures for Risk Assessment
+\end{itemize}
+
+\textbf{12:30 - 14:00} \quad \textbf{Lunch and Poster Session}\\
+\textit{Location: Conference Room B}\\
+Poster presentations by doctoral students and early-career researchers
+
+\textbf{14:00 - 15:30} \quad \textbf{Research Session 2: Blockchain Security and Fraud Detection}\\
+\textit{Chair: Prof. Joerg Osterrieder, FHGR}\\
+Building on the organizers' research expertise, this session examines advanced methods for ensuring security and detecting fraudulent activities in blockchain-based financial systems.
+\begin{itemize}
+\item Machine Learning for Blockchain Fraud Detection
+\item Smart Contract Vulnerability Analysis
+\item Anomaly Detection in DeFi Protocols
+\item Privacy-Preserving Techniques in Digital Finance
+\end{itemize}
+
+\textbf{15:30 - 16:00} \quad \textbf{Coffee Break}\\
+\textit{Location: Conference Room A}
+
+\textbf{16:00 - 17:00} \quad \textbf{Panel Discussion: Research Priorities in AI Finance}\\
+\textit{Moderator: Senior Academic Leader}\\
+Panelists from leading universities discuss emerging research challenges and opportunities in AI applications for finance, identifying priority areas for collaborative investigation.
+
+\textbf{17:00 - 17:30} \quad \textbf{Day 1 Wrap-up and Announcements}\\
+Summary of key insights and preview of Day 2
+
+\textbf{18:00 - 20:00} \quad \textbf{Welcome Reception}\\
+\textit{Location: Faculty Club}\\
+Informal networking opportunity with refreshments
+
+\newpage
+
+% Day 2 Program
+\section*{Day 2: Wednesday, April 22, 2026}
+\subsection*{Industry Applications and Implementation}
+
+\textbf{08:30 - 09:00} \quad \textbf{Welcome Coffee}\\
+\textit{Location: Conference Center Foyer}
+
+\textbf{09:00 - 10:00} \quad \textbf{Keynote Address 2}\\
+\textit{Digital Transformation in Gulf Banking: An AI Perspective}\\
+Senior Executive, Emirates NBD or First Abu Dhabi Bank\\
+This keynote provides regional industry perspective on AI adoption in banking, highlighting successful implementations and lessons learned from digital transformation initiatives.
+
+\textbf{10:00 - 10:30} \quad \textbf{Coffee Break and Networking}\\
+\textit{Location: Conference Room A}
+
+\textbf{10:30 - 12:00} \quad \textbf{Session 3: Explainable AI for Regulatory Compliance}\\
+\textit{Chair: DIFC Representative}\\
+This session addresses the critical need for transparent and interpretable AI systems in financial services, exploring approaches that satisfy regulatory requirements.
+\begin{itemize}
+\item FINMA Perspectives on AI Governance
+\item UAE Regulatory Sandbox Experiences
+\item Interpretable Models for Credit Risk Assessment
+\item Audit Trails and Model Documentation Standards
+\end{itemize}
+
+\textbf{12:00 - 13:30} \quad \textbf{Lunch and Industry Networking}\\
+\textit{Location: Conference Room B}\\
+Structured networking with industry representatives
+
+\textbf{13:30 - 15:00} \quad \textbf{Session 4: Digital Banking Innovation Case Studies}\\
+\textit{Chair: ADGM Representative}\\
+Industry practitioners share real-world implementations of AI in digital banking, customer experience, and financial inclusion initiatives.
+\begin{itemize}
+\item AI-Powered Customer Experience Enhancement
+\item Robo-Advisory Services in Wealth Management
+\item Financial Inclusion through AI-Driven Microfinance
+\item Islamic Finance and AI Applications
+\end{itemize}
+
+\textbf{15:00 - 15:30} \quad \textbf{Coffee Break}\\
+\textit{Location: Conference Room A}
+
+\textbf{15:30 - 17:00} \quad \textbf{Industry Roundtable: From Research to Implementation}\\
+\textit{Facilitator: Swiss Fintech Leader}\\
+Interactive discussion bringing together researchers and practitioners to identify barriers to AI adoption and develop strategies for successful implementation.
+
+\textbf{17:00 - 17:30} \quad \textbf{Day 2 Summary and Next Steps}\\
+Key takeaways and preparation for network launch
+
+\textbf{Evening} \quad \textbf{Free Evening}\\
+Optional cultural activities or informal dinners
+
+\newpage
+
+% Day 3 Program
+\section*{Day 3: Thursday, April 23, 2026}
+\subsection*{Capacity Building and Network Launch}
+
+\textbf{08:30 - 09:00} \quad \textbf{Welcome Coffee}\\
+\textit{Location: Conference Center Foyer}
+
+\textbf{09:00 - 10:30} \quad \textbf{MSCA Doctoral Training Workshop}\\
+\textit{Advanced Machine Learning Techniques for Financial Applications}\\
+\textit{Instructor: Expert from MSCA Network}\\
+Hands-on training session introducing doctoral students to advanced ML methods and tools for financial data analysis, including practical exercises with Python libraries.
+
+\textbf{10:30 - 11:00} \quad \textbf{Coffee Break}\\
+\textit{Location: Conference Room A}
+
+\textbf{11:00 - 12:30} \quad \textbf{Session 5: Doctoral Research Presentations}\\
+\textit{Chair: Senior Academic Mentor}\\
+Selected PhD students present their research with feedback from senior researchers and industry experts, fostering intergenerational knowledge exchange.
+\begin{itemize}
+\item Emerging Talent Showcase
+\item Best Paper Award Announcement
+\item Mentorship Opportunities
+\end{itemize}
+
+\textbf{12:30 - 14:00} \quad \textbf{Lunch and Career Fair}\\
+\textit{Location: Conference Room B}\\
+Opportunities for early-career researchers to connect with potential employers and collaborators
+
+\textbf{14:00 - 15:30} \quad \textbf{Working Group Formation}\\
+\textit{Parallel Sessions in Seminar Rooms 1 \& 2}\\
+Participants self-organize into thematic working groups:
+\begin{itemize}
+\item WG1: Large Language Models and NLP in Finance
+\item WG2: Blockchain and Digital Assets
+\item WG3: Risk Management and Compliance
+\item WG4: Financial Inclusion and Sustainability
+\end{itemize}
+
+\textbf{15:30 - 16:00} \quad \textbf{Coffee Break}\\
+\textit{Location: Conference Room A}
+
+\textbf{16:00 - 17:00} \quad \textbf{Network Launch Ceremony}\\
+\textit{Location: Main Auditorium}\\
+\begin{itemize}
+\item Presentation of 5-Year Research Roadmap
+\item Memorandum of Understanding Signing Ceremony
+\item Institutional Commitments from Founding Members
+\item Announcement of Next Workshop (2027)
+\item Funding Opportunities and Next Steps
+\end{itemize}
+
+\textbf{17:00 - 17:30} \quad \textbf{Closing Remarks}\\
+Summary by Prof. Joerg Osterrieder and Prof. Stephen Chan\\
+Vote of Thanks - Organizing Committee\\
+Final Announcements
+
+\textbf{18:30 - 21:00} \quad \textbf{Farewell Dinner}\\
+\textit{Location: Traditional Restaurant in Sharjah}\\
+Celebration of successful workshop and network launch
+
+\newpage
+
+% Acknowledgments
+\section*{Acknowledgments}
+
+The organizers gratefully acknowledge the support of:
+
+\subsection*{Primary Sponsor}
+\textbf{Leading House for the Middle East and North Africa}\\
+HES-SO, Switzerland\\
+Connect \& Collaborate Grant Program
+
+\subsection*{Institutional Partners}
+\begin{itemize}[leftmargin=*]
+\item University of Applied Sciences of the Grisons (FHGR), Switzerland
+\item American University of Sharjah (AUS), UAE
+\item MSCA Industrial Doctoral Network
+\end{itemize}
+
+\subsection*{Supporting Organizations}
+\begin{itemize}[leftmargin=*]
+\item Dubai International Financial Centre (DIFC)
+\item Abu Dhabi Global Market (ADGM)
+\item Emirates NBD
+\item First Abu Dhabi Bank
+\item Swiss Fintech Innovation Hub
+\end{itemize}
+
+\subsection*{Organizing Committee}
+\begin{itemize}[leftmargin=*]
+\item Prof. Dr. Joerg Osterrieder (Co-chair) - FHGR, Switzerland
+\item Prof. Dr. Stephen Chan (Co-chair) - AUS, UAE
+\item Dr. Yuanyuan Zhang - University of Manchester, UK
+\item Dr. Hana Sulieman - AUS, UAE
+\item [Additional committee members]
+\end{itemize}
+
+\subsection*{Scientific Committee}
+Representatives from participating universities ensuring academic excellence and peer review of contributions.
+
+\subsection*{Local Organizing Team}
+AUS staff and student volunteers who ensure smooth workshop operations.
+
+\vspace{1cm}
+
+\section*{Contact Information}
+
+\begin{tabular}{ll}
+\textbf{Workshop Secretariat} & workshop2026@aus.edu\\
+\textbf{Prof. Joerg Osterrieder} & joerg.osterrieder@fhgr.ch\\
+\textbf{Prof. Stephen Chan} & schan@aus.edu\\
+\textbf{Workshop Website} & www.workshop-ai-finance-mena.org\\
+\textbf{Social Media} & \#AIFinanceMENA\\
+\end{tabular}
+
+\vfill
+
+\begin{center}
+\textit{We look forward to your active participation in launching}\\
+\textit{the Swiss-MENA AI Finance Research Network}
+\end{center}
+
+\end{document}

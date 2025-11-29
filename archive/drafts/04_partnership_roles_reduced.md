@@ -1,0 +1,22 @@
+# Partnership and Roles
+
+**Budget and Co-Funding.** The partnership demonstrates exceptional commitment with **72% co-funding from partners**, contributing **CHF 13,000** of the **CHF 18,000** total budget. The **CCG contribution of CHF 5,000 (28%)** catalyzes this larger investment, ensuring sustainability beyond the initial event. The budget allocates **CHF 2,640** for Swiss partner travel and **CHF 2,360** for MENA event costs including catering and external speakers. Partner contributions total **CHF 13,000**: **CHF 2,500 from FHGR** (in-kind: **32 hours** staff time), **CHF 10,500 from AUS** (in-kind: **50 hours** staff time, venue, equipment), and **CHF 600 from AUS** (cash for materials).
+
+**Swiss Lead: FHGR.** **University of Applied Sciences Grisons** provides **Prof. Dr. Joerg Osterrieder**, Professor of Finance and Risk Modelling, as lead applicant responsible for workshop coordination, CCG grant management, Swiss stakeholder engagement, scientific program development, and bilateral agreement framework development. FHGR contributes **32 hours** of faculty time valued at **CHF 2,500**, marketing channels, and administrative support.
+
+**MENA Partner: AUS.** **American University of Sharjah** provides **Prof. Dr. Stephen Chan**, Department of Mathematics and Statistics, as principal partner responsible for local logistics, MENA participant recruitment, regional industry engagement with **DIFC**, **Emirates NBD**, and **First Abu Dhabi Bank**, and technical infrastructure management. AUS contributes **50 hours** of staff time valued at **CHF 5,000**, facilities and equipment valued at **CHF 4,900**, **CHF 600** cash for materials, and UAE financial sector network access.
+
+**Industry Contributors.** Industry contributors from **DIFC**, **Emirates NBD**, and **First Abu Dhabi Bank** participate through keynote presentations, case studies, and roundtables, providing practitioner perspectives. Doctoral participants from partner institutions contribute early-career research. **Dr. Hana Sulieman (AUS)** serves as co-organizer, contributing computational finance expertise and ensuring gender balance.
+
+**Proven Track Record.** The partnership builds on **7 years of collaboration** between Osterrieder and Chan yielding **4 published papers** on blockchain security, fraud detection, NFTs, and digital assets, multiple research grants exceeding **CHF 50,000**, and deep foundations through extended research collaboration including research stays and joint graduate student supervision. This demonstrates capability to deliver complex international workshops and sustain long-term collaboration.
+
+**Workshop Execution.** The **Executive Committee** (**Prof. Osterrieder** as Chair, **Prof. Chan** as Co-Chair, industry representative) provides strategic oversight. The **Program Committee** handles paper review, diversity initiatives through Sulieman, and doctoral program coordination. The **Local Team at AUS** manages venue logistics, registration, technical support, and communications.
+
+**Task Distribution.** Pre-workshop, FHGR leads CCG administration, international speaker recruitment, and website development while AUS leads venue arrangements, regional partnerships, and technical setup, with both jointly developing the program. During the workshop, FHGR leads sessions and agreement signing while AUS leads logistics, with both delivering content jointly. Post-workshop, FHGR leads CCG reporting and proceedings publication while AUS leads regional follow-up, with both conducting impact assessment.
+
+**Institutional Commitment.** Both institutions provide formal senior leadership endorsement ensuring continuity, long-term resources, strategic integration, and sustainable funding pathways. Support letters from the **FHGR Dean** and **AUS Provost** formalize institutional commitments.
+
+**Complementary Strengths.** Swiss contributions include precision financial technology, **FINMA** regulatory expertise, established fintech ecosystem, and research excellence. MENA contributions encompass dynamic market growth, regulatory sandbox approaches, Islamic finance expertise, and digital transformation experience. This **AUS-FHGR bilateral partnership** with exceptional co-funding and proven success ensures workshop achievement while establishing sustainable Swiss-MENA research infrastructure.
+
+---
+Character count: 4,445 (including spaces)

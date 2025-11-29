@@ -1,0 +1,25 @@
+# Node modules
+node_modules/
+
+# LaTeX temp files
+*.aux
+*.log
+*.out
+*.snm
+*.nav
+*.toc
+*.synctex.gz
+temp/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
