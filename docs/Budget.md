@@ -4,12 +4,20 @@
 
 ## Funding Sources Overview
 
+![Funding Sources](images/funding_sources.png)
+
 | Source | Amount (CHF) | Percentage | Type |
 |--------|-------------|------------|------|
 | CCG Request | 5,000 | 20.4% | Grant |
 | AUS Co-funding | 5,000 | 20.4% | In-kind + Direct |
 | Other Sources | 14,500 | 59.2% | Mixed |
 | **Total** | **24,500** | **100%** | |
+
+---
+
+## Budget by Category
+
+![Budget Categories](images/budget_categories.png)
 
 ---
 
@@ -69,6 +77,8 @@
 ---
 
 ## CCG Request Breakdown: CHF 5,000
+
+![CCG Breakdown](images/ccg_breakdown.png)
 
 | Category | Amount (CHF) | Percentage of CCG |
 |----------|-------------|-------------------|

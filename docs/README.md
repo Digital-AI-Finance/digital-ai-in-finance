@@ -1,58 +1,156 @@
-# AI for Digital Finance: Swiss-MENA Research Network
+# AI for Digital Finance
 
-## Workshop Overview
+## Launching the Swiss-MENA Research Network
 
-| Item | Details |
-|------|---------|
-| **Event** | 3-Day International Workshop |
-| **Dates** | April 21-23, 2026 |
-| **Location** | American University of Sharjah, UAE |
-| **Participants** | 80-100 (60% academic, 40% industry) |
-| **Grant** | Leading House MENA - Connect & Collaborate Grant |
+**International Workshop | April 21-23, 2026 | American University of Sharjah, UAE**
 
-## Co-Organizers
+---
 
-| Name | Institution | Country |
-|------|-------------|---------|
-| Prof. Dr. Joerg Osterrieder | University of Applied Sciences of the Grisons (FHGR) | Switzerland |
-| Prof. Dr. Stephen Chan | American University of Sharjah (AUS) | UAE |
+## At a Glance
 
-## Quick Links
+| | |
+|---|---|
+| **7 Years** | of research collaboration |
+| **550+** | citations on joint publications |
+| **6** | partner institutions |
+| **5** | countries represented |
+| **CHF 24,500** | total project budget |
 
-- [Budget](Budget.md) - Detailed budget breakdown and funding sources
-- [Workshop Content](Workshop-Content.md) - Full 3-day program and sessions
-- [Timeline](Timeline.md) - Project timeline and milestones
-- [Partners](Partners.md) - Institutional partners and industry supporters
-- [Application Materials](Application-Materials.md) - CCG application documents
+---
 
-## Project Vision
+## The Vision
 
-This workshop aims to launch the **Swiss-MENA AI Finance Research Network**, establishing sustainable collaboration between two of the world's most dynamic financial innovation ecosystems.
+The Swiss-MENA AI Finance Research Network represents a transformative initiative to establish sustainable collaboration between two of the world's most dynamic financial innovation ecosystems.
 
-### Strategic Objectives
+This workshop marks the formal launch of an international research network dedicated to advancing AI applications in financial services, bringing together leading academics, industry practitioners, and policymakers from Switzerland and the MENA region.
 
-1. **Network Establishment** - Formal launch through MoU signing with 10+ institutions
-2. **Research Collaboration** - Joint research agenda development for AI in finance
-3. **Industry Bridge** - Connect academic research with financial sector implementation
-4. **Capacity Building** - Doctoral training and researcher exchange programs
+---
 
-### Partnership Foundation
+## Quick Navigation
 
-- 7-year collaboration history between FHGR and AUS
-- 4 joint publications in blockchain security and fraud detection
-- Established international network across Europe, Asia, and MENA
+### Research & Publications
+- **[Research Portfolio](Research.md)** - 7 joint publications, 550+ citations, research areas
+- **[Network Map](Network-Map.md)** - Partner institutions and collaboration network
+- **[Collaboration Story](Collaboration-Story.md)** - 7-year journey and testimonials
 
-## Budget Summary
+### Workshop Details
+- **[Workshop Program](Workshop-Content.md)** - Full 3-day agenda and sessions
+- **[Timeline](Timeline.md)** - Project milestones and Gantt chart
+- **[Budget](Budget.md)** - Detailed budget breakdown and funding sources
 
-| Source | Amount (CHF) | Percentage |
-|--------|-------------|------------|
-| CCG Request | 5,000 | 20.4% |
-| AUS Co-funding | 5,000 | 20.4% |
-| Other Sources | 14,500 | 59.2% |
-| **Total** | **24,500** | **100%** |
+### Application
+- **[Application Materials](Application-Materials.md)** - CCG application summary
 
-## Contact
+---
 
-- **Prof. Joerg Osterrieder**: joerg.osterrieder@fhgr.ch
-- **Prof. Stephen Chan**: schan@aus.edu
-- **Leading House MENA**: lhmena@hes-so.ch
+## Key Highlights
+
+### Research Excellence
+
+Our collaboration has produced foundational research in cryptocurrency markets and blockchain security:
+
+| Publication | Year | Citations |
+|-------------|------|-----------|
+| GARCH Modelling of Cryptocurrencies | 2017 | **329** |
+| A Statistical Analysis of Cryptocurrencies | 2017 | **179** |
+| Blockchain Security & Fraud Detection | 2024 | 4 |
+
+[View all publications](Research.md)
+
+---
+
+### International Network
+
+![Network Map](images/network_map.png)
+
+**Core Partners:**
+- FHGR (Switzerland) - Network Coordinator
+- AUS (UAE) - MENA Coordinator
+
+**Research Partners:**
+- University of Manchester (UK)
+- Renmin University (China)
+- Babes-Bolyai University (Romania)
+- Bern University of Applied Sciences (Switzerland)
+
+[View network details](Network-Map.md)
+
+---
+
+### Workshop Program
+
+**Day 1: Research Frontiers**
+- Keynote: LLMs in Financial Services
+- Research sessions on AI methods and blockchain security
+- Welcome reception
+
+**Day 2: Industry Applications**
+- Keynote: Digital Transformation in Gulf Banking
+- Explainable AI for regulatory compliance
+- Industry roundtable
+
+**Day 3: Network Launch**
+- MSCA doctoral training workshop
+- Working group formation
+- **MoU signing ceremony**
+
+[View full program](Workshop-Content.md)
+
+---
+
+### Budget Overview
+
+![Funding Sources](images/funding_sources.png)
+
+| Source | Amount | Share |
+|--------|--------|-------|
+| CCG Request | CHF 5,000 | 20% |
+| AUS Co-funding | CHF 5,000 | 20% |
+| Other Sources | CHF 14,500 | 60% |
+| **Total** | **CHF 24,500** | 100% |
+
+[View detailed budget](Budget.md)
+
+---
+
+## Organizers
+
+### Prof. Dr. Joerg Osterrieder
+**University of Applied Sciences of the Grisons (FHGR), Switzerland**
+
+Network Coordinator | Financial ML, Risk Management, Blockchain
+
+Email: joerg.osterrieder@fhgr.ch
+
+### Prof. Dr. Stephen Chan
+**American University of Sharjah (AUS), UAE**
+
+MENA Coordinator | Statistical Finance, Cryptocurrency Markets
+
+Email: schan@aus.edu
+
+---
+
+## Supported By
+
+**Leading House for the Middle East and North Africa (LHMENA)**
+
+Connect & Collaborate Grant Program
+
+HES-SO, Switzerland
+
+---
+
+## Join Us
+
+The Swiss-MENA AI Finance Research Network welcomes collaborators from academic institutions and industry partners interested in advancing AI applications in financial services.
+
+**Workshop Registration**: April 2026
+
+**Network Membership**: Contact coordinators
+
+---
+
+*Documentation generated: November 2024*
+
+*Publication data source: [OpenAlex](https://openalex.org)*

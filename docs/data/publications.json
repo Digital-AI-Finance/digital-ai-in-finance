@@ -1,0 +1,161 @@
+[
+  {
+    "title": "Stylized facts of metaverse non-fungible tokens",
+    "year": 2024,
+    "journal": "Physica A Statistical Mechanics and its Applications",
+    "doi": "10.1016/j.physa.2024.130103",
+    "doi_url": "https://doi.org/10.1016/j.physa.2024.130103",
+    "citations": 6,
+    "authors": [
+      "Stephen Chan",
+      "Durga Chandrashekhar",
+      "Ward Almazloum",
+      "Yuanyuan Zhang",
+      "Nicholas Lord",
+      "Joerg Osterrieder",
+      "Jeffrey Chu"
+    ],
+    "concepts": [
+      "Stylized fact",
+      "Computer science",
+      "Economics",
+      "Keynesian economics"
+    ],
+    "open_access": false,
+    "openalex_id": "https://openalex.org/W4402527136"
+  },
+  {
+    "title": "Enhancing Security in Blockchain Networks: Anomalies, Frauds, and Advanced Detection Techniques",
+    "year": 2024,
+    "journal": "arXiv (Cornell University)",
+    "doi": "10.48550/arxiv.2402.11231",
+    "doi_url": "https://doi.org/10.48550/arxiv.2402.11231",
+    "citations": 4,
+    "authors": [
+      "Joerg Osterrieder",
+      "Stephen Chan",
+      "Jeffrey Chu",
+      "Yuanyuan Zhang",
+      "Branka Hadji Misheva",
+      "Codruţa Mare"
+    ],
+    "concepts": [
+      "Blockchain",
+      "Computer security",
+      "Computer science"
+    ],
+    "open_access": true,
+    "openalex_id": "https://openalex.org/W4392011536"
+  },
+  {
+    "title": "Metaverse Non Fungible Tokens",
+    "year": 2024,
+    "journal": "SSRN Electronic Journal",
+    "doi": "10.2139/ssrn.4733153",
+    "doi_url": "https://doi.org/10.2139/ssrn.4733153",
+    "citations": 3,
+    "authors": [
+      "Joerg Osterrieder",
+      "Stephen Chan",
+      "Jeffrey Chu",
+      "Yuanyuan Zhang"
+    ],
+    "concepts": [
+      "Computer science"
+    ],
+    "open_access": true,
+    "openalex_id": "https://openalex.org/W4393141759"
+  },
+  {
+    "title": "A Primer on Anomaly and Fraud Detection in Blockchain Networks",
+    "year": 2023,
+    "journal": "SSRN Electronic Journal",
+    "doi": "10.2139/ssrn.4317520",
+    "doi_url": "https://doi.org/10.2139/ssrn.4317520",
+    "citations": 1,
+    "authors": [
+      "Joerg Osterrieder",
+      "Stephen Chan",
+      "Jeffrey Chu",
+      "Yuanyuan Zhang"
+    ],
+    "concepts": [
+      "Blockchain",
+      "Anomaly detection",
+      "Primer (cosmetics)",
+      "Anomaly (physics)",
+      "Computer science"
+    ],
+    "open_access": true,
+    "openalex_id": "https://openalex.org/W4313680464"
+  },
+  {
+    "title": "GARCH Modelling of Cryptocurrencies",
+    "year": 2017,
+    "journal": "Journal of risk and financial management",
+    "doi": "10.3390/jrfm10040017",
+    "doi_url": "https://doi.org/10.3390/jrfm10040017",
+    "citations": 329,
+    "authors": [
+      "Jeffrey Chu",
+      "Stephen Chan",
+      "Saralees Nadarajah",
+      "Joerg Osterrieder"
+    ],
+    "concepts": [
+      "Cryptocurrency",
+      "Autoregressive conditional heteroskedasticity",
+      "Econometrics",
+      "Economics",
+      "Value (mathematics)"
+    ],
+    "open_access": true,
+    "openalex_id": "https://openalex.org/W2759609844"
+  },
+  {
+    "title": "A Statistical Analysis of Cryptocurrencies",
+    "year": 2017,
+    "journal": "Journal of risk and financial management",
+    "doi": "10.3390/jrfm10020012",
+    "doi_url": "https://doi.org/10.3390/jrfm10020012",
+    "citations": 179,
+    "authors": [
+      "Stephen Chan",
+      "Jeffrey Chu",
+      "Saralees Nadarajah",
+      "Joerg Osterrieder"
+    ],
+    "concepts": [
+      "Cryptocurrency",
+      "Normal-inverse Gaussian distribution",
+      "Econometrics",
+      "Distribution (mathematics)",
+      "Normal distribution"
+    ],
+    "open_access": true,
+    "openalex_id": "https://openalex.org/W2607989873"
+  },
+  {
+    "title": "GARCH Modeling of Cryptocurrencies",
+    "year": 2017,
+    "journal": "SSRN Electronic Journal",
+    "doi": "10.2139/ssrn.3047027",
+    "doi_url": "https://doi.org/10.2139/ssrn.3047027",
+    "citations": 28,
+    "authors": [
+      "Jeffrey Chu",
+      "Stephen Chan",
+      "Saralees Nadarajah",
+      "Joerg Osterrieder"
+    ],
+    "concepts": [
+      "Cryptocurrency",
+      "Autoregressive conditional heteroskedasticity",
+      "Econometrics",
+      "Economics",
+      "Computer science"
+    ],
+    "open_access": true,
+    "openalex_id": "https://openalex.org/W2901383326"
+  }
+]
