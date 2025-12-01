@@ -84,6 +84,16 @@ def load_photo_base64(filename):
             return f"data:{mime};base64,{base64.b64encode(f.read()).decode('utf-8')}"
     return None
 
+# Load affiliations
+def load_affiliations():
+    """Load affiliations from MSCA bios file"""
+    bios_file = PEOPLE_DATA_DIR / "msca_bios.json"
+    if bios_file.exists():
+        with open(bios_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            return data.get('affiliations', {})
+    return {}
+
 # Important dates for the conference
 IMPORTANT_DATES = [
     {"label": "Submission Deadline", "date": "February 15, 2026"},
@@ -977,7 +987,7 @@ def get_common_styles():
         }
     '''
 
-def generate_public_html(publications, network_map_b64, scientific_committee, photo_mappings):
+def generate_public_html(publications, network_map_b64, scientific_committee, photo_mappings, affiliations):
     """Generate the public HTML page (without budget)"""
 
     total_citations = sum(p.get('citations', 0) for p in publications)
@@ -1401,11 +1411,12 @@ def generate_public_html(publications, network_map_b64, scientific_committee, ph
 
             <div class="committee-grid">'''
 
-    # Add scientific committee members with photos
+    # Add scientific committee members with photos and affiliations
     for member in scientific_committee:
         # Try to find photo for this member
         member_lower = member.lower()
         photo_filename = photo_mappings.get(member_lower)
+        affiliation = affiliations.get(member, '')
 
         if photo_filename:
             photo_b64 = load_photo_base64(photo_filename)
@@ -1414,6 +1425,7 @@ def generate_public_html(publications, network_map_b64, scientific_committee, ph
                 <div class="committee-member">
                     <img src="{photo_b64}" alt="{member}">
                     <div class="name">{member}</div>
+                    <div class="affiliation">{affiliation}</div>
                 </div>'''
             else:
                 # Photo file not found, show initials
@@ -1422,6 +1434,7 @@ def generate_public_html(publications, network_map_b64, scientific_committee, ph
                 <div class="committee-member">
                     <div class="initials">{initials}</div>
                     <div class="name">{member}</div>
+                    <div class="affiliation">{affiliation}</div>
                 </div>'''
         else:
             # No photo mapping, show initials
@@ -1430,6 +1443,7 @@ def generate_public_html(publications, network_map_b64, scientific_committee, ph
                 <div class="committee-member">
                     <div class="initials">{initials}</div>
                     <div class="name">{member}</div>
+                    <div class="affiliation">{affiliation}</div>
                 </div>'''
 
     html += f'''
@@ -2070,14 +2084,16 @@ def main():
     network_map_b64 = load_network_map_base64()
     scientific_committee = load_scientific_committee()
     photo_mappings = load_photo_mappings()
+    affiliations = load_affiliations()
 
     print(f"  Loaded {len(publications)} publications")
     print(f"  Loaded {len(scientific_committee)} Scientific Committee members")
     print(f"  Loaded {len(photo_mappings)} photo mappings")
+    print(f"  Loaded {len(affiliations)} affiliations")
 
     # Generate public page (no budget)
     print("  Generating public page (ai_digital_finance.html)...")
-    public_html = generate_public_html(publications, network_map_b64, scientific_committee, photo_mappings)
+    public_html = generate_public_html(publications, network_map_b64, scientific_committee, photo_mappings, affiliations)
     with open(OUTPUT_PUBLIC, 'w', encoding='utf-8') as f:
         f.write(public_html)
     print(f"  -> {OUTPUT_PUBLIC} ({OUTPUT_PUBLIC.stat().st_size / 1024:.1f} KB)")
