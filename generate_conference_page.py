@@ -57,6 +57,7 @@ def generate_html():
 
     affiliations_data = load_json(DATA_DIR / "msca_bios.json")
     affiliations = affiliations_data.get('affiliations', {})
+    bios = affiliations_data.get('bios', {})
 
     network_map = load_image_base64(IMAGES_DIR / "network_map.png")
 
@@ -116,6 +117,9 @@ def generate_html():
     .member .initials { width: 45px; height: 45px; border-radius: 50%; background: linear-gradient(135deg, var(--blue), #1a3a6e); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; margin: 0 auto; }
     .member .name { font-size: 0.7rem; font-weight: 600; margin-top: 4px; line-height: 1.2; }
     .member .aff { font-size: 0.6rem; color: #888; }
+    .member { position: relative; cursor: pointer; }
+    .member .bio { display: none; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: var(--dark); color: white; padding: 8px 10px; border-radius: 5px; font-size: 0.65rem; width: 180px; text-align: left; z-index: 100; line-height: 1.3; }
+    .member:hover .bio { display: block; }
 
     /* Venue */
     .venue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
@@ -228,16 +232,19 @@ def generate_html():
         photo_file = photo_map.get(member.lower())
         aff = affiliations.get(member, '')
         aff_short = aff.split(',')[0].replace("University of ", "U.").replace("University", "U.")[:25]
+        bio = bios.get(member, '')
 
         photo_b64 = None
         if photo_file:
             photo_b64 = load_image_base64(PEOPLE_ASSETS_DIR / photo_file)
 
+        bio_html = f'<div class="bio">{bio}</div>' if bio else ''
+
         if photo_b64:
-            html += f'<div class="member"><img src="{photo_b64}" alt="{member}"><div class="name">{member}</div><div class="aff">{aff_short}</div></div>'
+            html += f'<div class="member"><img src="{photo_b64}" alt="{member}"><div class="name">{member}</div><div class="aff">{aff_short}</div>{bio_html}</div>'
         else:
             initials = ''.join(n[0].upper() for n in member.split()[:2] if n)
-            html += f'<div class="member"><div class="initials">{initials}</div><div class="name">{member}</div><div class="aff">{aff_short}</div></div>'
+            html += f'<div class="member"><div class="initials">{initials}</div><div class="name">{member}</div><div class="aff">{aff_short}</div>{bio_html}</div>'
 
     html += '''
             </div>
