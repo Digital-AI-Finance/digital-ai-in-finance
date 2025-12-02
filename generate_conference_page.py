@@ -38,9 +38,34 @@ DATES = [
 ]
 
 TOPICS = [
-    "LLMs in Finance", "Explainable AI", "Blockchain Security",
-    "Risk Management", "Digital Banking", "Alternative Data"
+    ("LLMs in Finance", "topic_llms.html"),
+    ("Explainable AI", "topic_xai.html"),
+    ("Blockchain Security", "topic_blockchain.html"),
+    ("Risk Management", "topic_risk.html"),
+    ("Digital Banking", "topic_banking.html"),
+    ("Alternative Data", "topic_altdata.html")
 ]
+
+KEYNOTES = [
+    ("TBC", "Keynote Speaker 1", "Institution TBC", "Talk title to be announced"),
+    ("TBC", "Keynote Speaker 2", "Institution TBC", "Talk title to be announced"),
+    ("TBC", "Keynote Speaker 3", "Institution TBC", "Talk title to be announced")
+]
+
+SESSIONS = {
+    "Opening & Keynote": "Welcome address by conference chairs followed by the opening keynote on AI transformation in MENA financial markets.",
+    "Panel: LLMs": "Industry-academia panel discussing practical applications of Large Language Models in banking and investment management.",
+    "Research": "Contributed paper sessions featuring peer-reviewed research from workshop participants.",
+    "Workshop": "Hands-on tutorial sessions covering tools and techniques for AI in finance research.",
+    "Reception": "Networking reception at the AUS campus with refreshments.",
+    "Keynote: XAI": "Featured talk on explainable AI requirements for regulatory compliance in financial services.",
+    "Panel: Blockchain": "Discussion on security challenges and opportunities in DeFi and digital asset markets.",
+    "Keynote: MENA Banking": "Special keynote on digital banking transformation across the MENA region.",
+    "Collaboration": "Structured networking session to identify research collaboration opportunities.",
+    "Panel": "Closing panel on the future of AI research collaboration between Swiss and MENA institutions.",
+    "Signing": "Formal signing ceremony for research partnership agreements.",
+    "Gala": "Conference gala dinner at a premier Sharjah venue."
+}
 
 PROGRAM = [
     ("Day 1", "Apr 21", [("09:00", "Opening & Keynote"), ("11:00", "Panel: LLMs"), ("14:00", "Research"), ("16:00", "Workshop"), ("18:00", "Reception")]),
@@ -99,16 +124,54 @@ def generate_html():
 
     /* Topics */
     .topics { display: flex; gap: 6px; flex-wrap: wrap; }
-    .topic { background: var(--blue); color: white; padding: 5px 10px; border-radius: 3px; font-size: 0.75rem; }
+    .topic { background: var(--blue); color: white; padding: 5px 10px; border-radius: 3px; font-size: 0.75rem; text-decoration: none; transition: all 0.3s; cursor: pointer; }
+    .topic:hover { background: #1a3a6e; transform: translateY(-2px); }
+
+    /* Call for Papers */
+    .cfp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .cfp-box { background: var(--light); padding: 12px; border-radius: 5px; }
+    .cfp-box h4 { font-size: 0.8rem; color: var(--blue); margin-bottom: 5px; }
+    .cfp-box p, .cfp-box li { font-size: 0.75rem; color: #555; }
+    .cfp-box ul { list-style: none; margin-top: 5px; }
+    .cfp-box li { padding: 2px 0; }
+    .cfp-btn { display: inline-block; background: var(--gold); color: var(--dark); padding: 8px 20px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.8rem; margin-top: 10px; }
+
+    /* Keynotes */
+    .keynotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .keynote { background: var(--light); border-radius: 5px; padding: 15px; text-align: center; }
+    .keynote-photo { width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--blue), #1a3a6e); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 700; margin: 0 auto 10px; }
+    .keynote .name { font-weight: 600; font-size: 0.85rem; color: var(--blue); }
+    .keynote .inst { font-size: 0.7rem; color: #888; }
+    .keynote .talk { font-size: 0.75rem; color: #555; margin-top: 5px; font-style: italic; }
 
     /* Program */
     .program { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
     .day { background: var(--light); border-radius: 5px; overflow: hidden; }
     .day-header { background: var(--blue); color: white; padding: 6px 10px; font-size: 0.8rem; font-weight: 600; }
     .day-header span { opacity: 0.8; font-weight: 400; }
-    .session { padding: 4px 10px; font-size: 0.75rem; border-bottom: 1px solid #ddd; display: flex; }
+    .session { padding: 4px 10px; font-size: 0.75rem; border-bottom: 1px solid #ddd; display: flex; cursor: pointer; transition: background 0.2s; }
+    .session:hover { background: rgba(46, 80, 144, 0.1); }
     .session:last-child { border: none; }
     .session-time { width: 40px; font-weight: 600; color: var(--blue); }
+    .session-title { flex: 1; }
+
+    /* Modal */
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; }
+    .modal.active { display: flex; }
+    .modal-content { background: white; padding: 25px; border-radius: 8px; max-width: 500px; width: 90%; position: relative; }
+    .modal-close { position: absolute; top: 10px; right: 15px; font-size: 1.5rem; cursor: pointer; color: #888; }
+    .modal-close:hover { color: #333; }
+    .modal h3 { color: var(--blue); margin-bottom: 10px; }
+    .modal p { font-size: 0.9rem; color: #555; line-height: 1.5; }
+
+    /* Share */
+    .share-bar { display: flex; gap: 8px; justify-content: center; padding: 15px; background: var(--dark); }
+    .share-btn { display: flex; align-items: center; gap: 5px; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 0.75rem; color: white; transition: opacity 0.2s; }
+    .share-btn:hover { opacity: 0.8; }
+    .share-linkedin { background: #0077B5; }
+    .share-twitter { background: #1DA1F2; }
+    .share-copy { background: #555; cursor: pointer; border: none; }
+    .hashtag { color: var(--gold); font-size: 0.8rem; margin-left: 10px; }
 
     /* Committee */
     .committee { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 8px; }
@@ -162,7 +225,9 @@ def generate_html():
         <div class="subtitle">Swiss-MENA Workshop 2026</div>
         <nav>
             <a href="#dates">Important Dates</a>
+            <a href="#cfp">Call for Papers</a>
             <a href="#topics">Topics</a>
+            <a href="#keynotes">Keynotes</a>
             <a href="#program">Program</a>
             <a href="#committee">Committee</a>
             <a href="#venue">Venue</a>
@@ -198,12 +263,54 @@ def generate_html():
             </div>
         </section>
 
+        <section id="cfp">
+            <h2>Call for Papers</h2>
+            <div class="cfp-grid">
+                <div class="cfp-box">
+                    <h4>Submission Guidelines</h4>
+                    <ul>
+                        <li>Extended abstract: 2-4 pages</li>
+                        <li>Full paper: 8-12 pages</li>
+                        <li>Format: PDF, double-column</li>
+                        <li>Blind review process</li>
+                    </ul>
+                </div>
+                <div class="cfp-box">
+                    <h4>Key Deadlines</h4>
+                    <ul>
+                        <li>Submission: February 15, 2026</li>
+                        <li>Notification: March 1, 2026</li>
+                        <li>Camera-ready: March 15, 2026</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:15px;">
+                <a href="mailto:submissions@ai-digital-finance.org" class="cfp-btn">Submit Paper</a>
+            </div>
+        </section>
+
         <section id="topics">
             <h2>Topics</h2>
             <div class="topics">'''
 
-    for topic in TOPICS:
-        html += f'<span class="topic">{topic}</span>'
+    for topic_name, topic_url in TOPICS:
+        html += f'<a href="{topic_url}" class="topic">{topic_name}</a>'
+
+    html += '''
+            </div>
+        </section>
+
+        <section id="keynotes">
+            <h2>Keynote Speakers</h2>
+            <div class="keynotes">'''
+
+    for initials, name, inst, talk in KEYNOTES:
+        html += f'''<div class="keynote">
+                <div class="keynote-photo">{initials}</div>
+                <div class="name">{name}</div>
+                <div class="inst">{inst}</div>
+                <div class="talk">{talk}</div>
+            </div>'''
 
     html += '''
             </div>
@@ -216,7 +323,8 @@ def generate_html():
     for day, date, sessions in PROGRAM:
         html += f'<div class="day"><div class="day-header">{day} <span>({date})</span></div>'
         for time, title in sessions:
-            html += f'<div class="session"><span class="session-time">{time}</span><span>{title}</span></div>'
+            desc = SESSIONS.get(title, "Session details to be announced.")
+            html += f'<div class="session" onclick="showModal(\'{title}\', \'{desc}\')"><span class="session-time">{time}</span><span class="session-title">{title}</span></div>'
         html += '</div>'
 
     html += '''
@@ -278,7 +386,49 @@ def generate_html():
 
     html += '''
         </section>
+
+        <div class="share-bar">
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://digital-ai-finance.github.io/digital-ai-in-finance/" target="_blank" class="share-btn share-linkedin">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+            <a href="https://twitter.com/intent/tweet?url=https://digital-ai-finance.github.io/digital-ai-in-finance/&text=AI%20for%20Digital%20Finance%20Workshop%202026%20-%20Swiss-MENA%20Research%20Network" target="_blank" class="share-btn share-twitter">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                Share
+            </a>
+            <button onclick="copyLink()" class="share-btn share-copy">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                Copy Link
+            </button>
+            <span class="hashtag">#AIDigitalFinance2026</span>
+        </div>
     </main>
+
+    <div class="modal" id="sessionModal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle"></h3>
+            <p id="modalDesc"></p>
+        </div>
+    </div>
+
+    <script>
+        function showModal(title, desc) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalDesc').textContent = desc;
+            document.getElementById('sessionModal').classList.add('active');
+        }
+        function closeModal(e) {
+            if (!e || e.target.classList.contains('modal')) {
+                document.getElementById('sessionModal').classList.remove('active');
+            }
+        }
+        function copyLink() {
+            navigator.clipboard.writeText('https://digital-ai-finance.github.io/digital-ai-in-finance/');
+            alert('Link copied to clipboard!');
+        }
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+    </script>
 </body>
 </html>'''
 

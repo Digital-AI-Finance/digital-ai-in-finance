@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explainable AI - AI for Digital Finance 2026</title>
+    <style>
+    :root { --blue: #2E5090; --gold: #D4AF37; --dark: #1a1a2e; --light: #f5f5f5; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; line-height: 1.6; color: #333; background: var(--light); }
+
+    .header { background: linear-gradient(135deg, var(--blue), #1a3a6e); color: white; padding: 40px 20px; text-align: center; }
+    .header h1 { font-size: 2rem; margin-bottom: 5px; }
+    .header p { opacity: 0.9; font-size: 1.1rem; }
+    .back-link { position: absolute; top: 20px; left: 20px; color: white; text-decoration: none; font-size: 0.9rem; opacity: 0.8; }
+    .back-link:hover { opacity: 1; }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 30px 20px; }
+
+    .section { background: white; border-radius: 8px; padding: 25px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .section h2 { color: var(--blue); font-size: 1.2rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+    .section h2::before { content: ''; width: 4px; height: 20px; background: var(--gold); }
+
+    .description { font-size: 0.95rem; color: #444; text-align: justify; }
+
+    ul { list-style: none; }
+    ul li { padding: 8px 0 8px 25px; position: relative; border-bottom: 1px solid #eee; }
+    ul li:last-child { border-bottom: none; }
+    ul li::before { content: ''; position: absolute; left: 0; top: 14px; width: 8px; height: 8px; background: var(--gold); border-radius: 50%; }
+
+    .cta { text-align: center; margin-top: 30px; }
+    .cta a { display: inline-block; background: var(--blue); color: white; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 600; transition: background 0.3s; }
+    .cta a:hover { background: #1a3a6e; }
+
+    .topics-nav { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 30px; }
+    .topics-nav a { background: white; color: var(--blue); padding: 8px 15px; border-radius: 20px; text-decoration: none; font-size: 0.85rem; border: 1px solid #ddd; transition: all 0.3s; }
+    .topics-nav a:hover, .topics-nav a.active { background: var(--blue); color: white; border-color: var(--blue); }
+
+    footer { text-align: center; padding: 30px; color: #666; font-size: 0.85rem; }
+    footer a { color: var(--blue); }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="back-link">&larr; Back to Conference</a>
+        <h1>Explainable AI</h1>
+        <p>Transparency and Interpretability in Financial AI</p>
+    </header>
+
+    <div class="container">
+        <div class="topics-nav">
+            <a href="topic_llms.html" class="">LLMs in Finance</a><a href="topic_xai.html" class="active">Explainable AI</a><a href="topic_blockchain.html" class="">Blockchain Security</a><a href="topic_risk.html" class="">Risk Management</a><a href="topic_banking.html" class="">Digital Banking</a><a href="topic_altdata.html" class="">Alternative Data</a>
+        </div>
+
+        <div class="section">
+            <h2>Overview</h2>
+            <div class="description">
+                Explainable AI (XAI) addresses the critical need for transparency in AI-driven financial
+decisions. As machine learning models become more complex, regulators and stakeholders
+increasingly demand clear explanations for credit decisions, risk assessments, and
+investment recommendations.
+
+This track focuses on methods to make black-box models interpretable while maintaining
+predictive performance. We explore both post-hoc explanation techniques and inherently
+interpretable models suitable for regulated financial environments where accountability
+and auditability are paramount.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Key Research Questions</h2>
+            <ul>
+                <li>How can SHAP and LIME be adapted for complex financial time series models?</li><li>What level of explainability satisfies regulatory requirements (ECB, BaFin, FINMA)?</li><li>How do we balance model complexity with interpretability in credit scoring?</li><li>Can attention mechanisms provide meaningful explanations for financial predictions?</li><li>What are best practices for communicating AI explanations to non-technical stakeholders?</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Methodologies</h2>
+            <ul>
+                <li>SHAP (SHapley Additive exPlanations) values</li><li>LIME (Local Interpretable Model-agnostic Explanations)</li><li>Attention visualization for transformer models</li><li>Counterfactual explanations</li><li>Inherently interpretable models (GAMs, rule-based systems)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Industry Applications</h2>
+            <ul>
+                <li>Credit scoring model explanations for rejected applicants</li><li>Risk model audit trails for regulatory compliance</li><li>Investment recommendation justifications</li><li>Fraud detection alert explanations</li><li>Algorithmic trading decision logs</li>
+            </ul>
+        </div>
+
+        <div class="cta">
+            <a href="index.html#topics">Submit Your Research</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>AI for Digital Finance Workshop | April 21-23, 2026 | American University of Sharjah, UAE</p>
+        <p><a href="index.html">Back to Main Conference Page</a></p>
+    </footer>
+</body>
+</html>
