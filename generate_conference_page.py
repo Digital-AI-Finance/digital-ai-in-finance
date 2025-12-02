@@ -73,6 +73,26 @@ PROGRAM = [
     ("Day 3", "Apr 23", [("09:00", "Keynote: MENA Banking"), ("10:30", "Collaboration"), ("13:30", "Panel"), ("15:30", "Signing"), ("19:00", "Gala")])
 ]
 
+PARTNERS = [
+    ("FHGR", "Fachhochschule Graubunden", "https://www.fhgr.ch", "CH"),
+    ("AUS", "American University of Sharjah", "https://www.aus.edu", "UAE"),
+    ("Manchester", "University of Manchester", "https://www.manchester.ac.uk", "UK"),
+    ("Renmin", "Renmin University of China", "https://www.ruc.edu.cn", "CN"),
+    ("Babes-Bolyai", "Babes-Bolyai University", "https://www.ubbcluj.ro", "RO"),
+    ("BFH", "Bern University of Applied Sciences", "https://www.bfh.ch", "CH")
+]
+
+# SVG Logo (inline)
+LOGO_SVG = '''<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="20" cy="20" r="18" fill="#2E5090" stroke="#D4AF37" stroke-width="2"/>
+  <text x="20" y="16" text-anchor="middle" fill="white" font-size="8" font-weight="bold">AI</text>
+  <text x="20" y="26" text-anchor="middle" fill="#D4AF37" font-size="6" font-weight="bold">DF</text>
+  <text x="20" y="33" text-anchor="middle" fill="white" font-size="4">2026</text>
+</svg>'''
+
+# Favicon as data URL (32x32 PNG encoded)
+FAVICON_SVG = 'data:image/svg+xml,' + LOGO_SVG.replace('\n', '').replace('#', '%23')
+
 def generate_html():
     committee_data = load_json(DATA_DIR / "scientific_committee.json")
     committee = committee_data.get('selected', [])
@@ -94,19 +114,34 @@ def generate_html():
     [data-theme="dark"] {
         --bg: #1a1a2e; --light: #2a2a4e; --text: #e0e0e0; --text-muted: #aaa;
     }
+    html { scroll-behavior: smooth; }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; line-height: 1.4; color: var(--text); display: flex; min-height: 100vh; background: var(--bg); transition: background 0.3s, color 0.3s; }
+    section { scroll-margin-top: 20px; }
 
     /* Sidebar */
-    .sidebar { width: 200px; background: var(--dark); color: white; position: fixed; height: 100vh; padding: 15px; overflow-y: auto; z-index: 100; }
-    .sidebar h1 { font-size: 0.95rem; color: var(--gold); margin-bottom: 5px; }
-    .sidebar .subtitle { font-size: 0.7rem; opacity: 0.7; margin-bottom: 15px; border-bottom: 1px solid #444; padding-bottom: 10px; }
+    .sidebar { width: 200px; background: var(--dark); color: white; position: fixed; height: 100vh; padding: 15px; overflow-y: auto; z-index: 100; transition: transform 0.3s; }
+    .sidebar .logo { width: 40px; height: 40px; margin: 0 auto 10px; display: block; }
+    .sidebar h1 { font-size: 0.95rem; color: var(--gold); margin-bottom: 5px; text-align: center; }
+    .sidebar .subtitle { font-size: 0.7rem; opacity: 0.7; margin-bottom: 15px; border-bottom: 1px solid #444; padding-bottom: 10px; text-align: center; }
     .sidebar nav a { display: block; color: white; text-decoration: none; padding: 6px 10px; font-size: 0.8rem; border-radius: 4px; margin-bottom: 2px; opacity: 0.8; }
     .sidebar nav a:hover { background: rgba(255,255,255,0.1); opacity: 1; }
     .sidebar .register-btn { display: block; background: var(--gold); color: var(--dark); text-align: center; padding: 8px; border-radius: 4px; font-weight: 700; font-size: 0.8rem; margin-top: 15px; text-decoration: none; }
     .sidebar .info { margin-top: 20px; padding-top: 15px; border-top: 1px solid #444; font-size: 0.7rem; opacity: 0.6; }
     .theme-toggle { background: none; border: 1px solid #555; color: white; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 0.7rem; margin-top: 10px; width: 100%; }
     .theme-toggle:hover { background: rgba(255,255,255,0.1); }
+
+    /* Mobile Menu */
+    .mobile-header { display: none; position: fixed; top: 0; left: 0; right: 0; background: var(--dark); padding: 10px 15px; z-index: 99; }
+    .hamburger { background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+    .mobile-header .title { color: var(--gold); font-size: 0.9rem; font-weight: 700; }
+    .sidebar-backdrop { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 99; }
+    .sidebar-backdrop.active { display: block; }
+
+    /* Back to Top */
+    .back-to-top { position: fixed; bottom: 30px; right: 30px; width: 40px; height: 40px; background: var(--blue); color: white; border: none; border-radius: 50%; cursor: pointer; font-size: 1.2rem; opacity: 0; visibility: hidden; transition: all 0.3s; z-index: 90; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+    .back-to-top.visible { opacity: 1; visibility: visible; }
+    .back-to-top:hover { background: var(--gold); transform: translateY(-3px); }
 
     /* Main */
     main { margin-left: 200px; flex: 1; background: var(--bg); }
@@ -237,15 +272,41 @@ def generate_html():
     .placeholder-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; opacity: 0.5; }
     .placeholder-card { background: var(--bg); border: 2px dashed #ccc; border-radius: 8px; padding: 20px; }
 
+    /* Partner Logos */
+    .partners-grid { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 15px; }
+    .partner { background: white; padding: 10px 15px; border-radius: 5px; text-decoration: none; text-align: center; transition: transform 0.2s, box-shadow 0.2s; border: 1px solid #ddd; min-width: 100px; }
+    .partner:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+    .partner .abbr { font-weight: 700; color: var(--blue); font-size: 1rem; }
+    .partner .country { font-size: 0.65rem; color: var(--gold); font-weight: 600; }
+    .partner .name { font-size: 0.6rem; color: #666; margin-top: 2px; }
+
     @media (max-width: 900px) {
         .sidebar { width: 160px; }
         main { margin-left: 160px; }
         .program { grid-template-columns: 1fr; }
         .venue-grid { grid-template-columns: 1fr; }
+        .keynotes { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
-        .sidebar { display: none; }
+        .sidebar { transform: translateX(-100%); }
+        .sidebar.open { transform: translateX(0); }
+        .mobile-header { display: flex; align-items: center; justify-content: space-between; }
+        main { margin-left: 0; padding-top: 50px; }
+        .back-to-top { bottom: 20px; right: 20px; }
+    }
+
+    /* Print Styles */
+    @media print {
+        .sidebar, .mobile-header, .share-bar, .back-to-top, .theme-toggle, .register-btn, .newsletter, .modal { display: none !important; }
         main { margin-left: 0; }
+        body { font-size: 11pt; color: black; background: white; }
+        .hero { background: #2E5090 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 20px; }
+        section { page-break-inside: avoid; border: none; padding: 15px 0; }
+        .program { grid-template-columns: 1fr 1fr 1fr; }
+        .committee { grid-template-columns: repeat(6, 1fr); }
+        .member img, .member .initials { width: 30px; height: 30px; }
+        a { color: inherit; text-decoration: none; }
+        h2::before { background: #D4AF37 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     }
     '''
 
@@ -254,11 +315,37 @@ def generate_html():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI for Digital Finance 2026</title>
+    <title>AI for Digital Finance 2026 | Swiss-MENA Workshop</title>
+    <meta name="description" content="AI for Digital Finance Workshop 2026 - A Swiss-MENA Research Network event. April 21-23, 2026 at American University of Sharjah, UAE. Topics: LLMs, Explainable AI, Blockchain, Risk Management, Digital Banking.">
+    <meta name="keywords" content="AI, Digital Finance, Workshop, Conference, LLMs, Blockchain, Risk Management, MENA, Switzerland, UAE, Sharjah">
+    <link rel="canonical" href="https://digital-ai-finance.github.io/digital-ai-in-finance/">
+    <link rel="icon" type="image/svg+xml" href="{FAVICON_SVG}">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="AI for Digital Finance Workshop 2026">
+    <meta property="og:description" content="Swiss-MENA Research Network Workshop | April 21-23, 2026 | American University of Sharjah, UAE">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://digital-ai-finance.github.io/digital-ai-in-finance/">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI for Digital Finance Workshop 2026">
+    <meta name="twitter:description" content="Swiss-MENA Research Network | April 21-23, 2026 | Sharjah, UAE">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200">
+
     <style>{css}</style>
 </head>
 <body>
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+        <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+        <span class="title">AI for Digital Finance 2026</span>
+    </div>
+    <div class="sidebar-backdrop" onclick="toggleMenu()"></div>
+
     <aside class="sidebar">
+        {LOGO_SVG.replace('<svg', '<svg class="logo"')}
         <h1>AI for Digital Finance</h1>
         <div class="subtitle">Swiss-MENA Workshop 2026</div>
         <nav>
@@ -269,6 +356,7 @@ def generate_html():
             <a href="#committee">Committee</a>
             <a href="#venue">Venue</a>
             <a href="#network">Network</a>
+            <a href="#partners">Partners</a>
             <a href="#papers">Accepted Papers</a>
             <a href="#gallery">Gallery</a>
             <a href="#cfp">Call for Papers</a>
@@ -414,6 +502,21 @@ def generate_html():
     html += '''
         </section>
 
+        <section id="partners">
+            <h2>Partner Institutions</h2>
+            <div class="partners-grid">'''
+
+    for abbr, name, url, country in PARTNERS:
+        html += f'''<a href="{url}" target="_blank" class="partner">
+                <div class="abbr">{abbr}</div>
+                <div class="country">{country}</div>
+                <div class="name">{name}</div>
+            </a>'''
+
+    html += '''
+            </div>
+        </section>
+
         <section id="papers" class="placeholder-section">
             <h2>Accepted Papers</h2>
             <p class="coming-soon">Paper submissions open February 2026. Accepted papers will be listed here after the review process.</p>
@@ -487,6 +590,9 @@ def generate_html():
             <span class="hashtag">#AIDigitalFinance2026</span>
         </div>
     </main>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" onclick="scrollToTop()" title="Back to top">&#8593;</button>
 
     <div class="modal" id="sessionModal" onclick="closeModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
@@ -577,6 +683,31 @@ def generate_html():
             const email = e.target.querySelector('input').value;
             alert('Thank you for subscribing! You will receive updates at ' + email);
             e.target.reset();
+        }
+
+        // Mobile Menu
+        function toggleMenu() {
+            document.querySelector('.sidebar').classList.toggle('open');
+            document.querySelector('.sidebar-backdrop').classList.toggle('active');
+        }
+        // Close menu on nav click
+        document.querySelectorAll('.sidebar nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 600) toggleMenu();
+            });
+        });
+
+        // Back to Top
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
