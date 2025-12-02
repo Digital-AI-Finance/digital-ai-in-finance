@@ -87,29 +87,51 @@ def generate_html():
     network_map = load_image_base64(IMAGES_DIR / "network_map.png")
 
     css = '''
-    :root { --blue: #2E5090; --gold: #D4AF37; --dark: #1a1a2e; --light: #f0f0f0; }
+    :root {
+        --blue: #2E5090; --gold: #D4AF37; --dark: #1a1a2e; --light: #f0f0f0;
+        --bg: white; --text: #333; --text-muted: #666;
+    }
+    [data-theme="dark"] {
+        --bg: #1a1a2e; --light: #2a2a4e; --text: #e0e0e0; --text-muted: #aaa;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; line-height: 1.4; color: #333; display: flex; min-height: 100vh; }
+    body { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; line-height: 1.4; color: var(--text); display: flex; min-height: 100vh; background: var(--bg); transition: background 0.3s, color 0.3s; }
 
     /* Sidebar */
-    .sidebar { width: 200px; background: var(--dark); color: white; position: fixed; height: 100vh; padding: 15px; overflow-y: auto; }
+    .sidebar { width: 200px; background: var(--dark); color: white; position: fixed; height: 100vh; padding: 15px; overflow-y: auto; z-index: 100; }
     .sidebar h1 { font-size: 0.95rem; color: var(--gold); margin-bottom: 5px; }
     .sidebar .subtitle { font-size: 0.7rem; opacity: 0.7; margin-bottom: 15px; border-bottom: 1px solid #444; padding-bottom: 10px; }
     .sidebar nav a { display: block; color: white; text-decoration: none; padding: 6px 10px; font-size: 0.8rem; border-radius: 4px; margin-bottom: 2px; opacity: 0.8; }
     .sidebar nav a:hover { background: rgba(255,255,255,0.1); opacity: 1; }
     .sidebar .register-btn { display: block; background: var(--gold); color: var(--dark); text-align: center; padding: 8px; border-radius: 4px; font-weight: 700; font-size: 0.8rem; margin-top: 15px; text-decoration: none; }
     .sidebar .info { margin-top: 20px; padding-top: 15px; border-top: 1px solid #444; font-size: 0.7rem; opacity: 0.6; }
+    .theme-toggle { background: none; border: 1px solid #555; color: white; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 0.7rem; margin-top: 10px; width: 100%; }
+    .theme-toggle:hover { background: rgba(255,255,255,0.1); }
 
     /* Main */
-    main { margin-left: 200px; flex: 1; background: white; }
+    main { margin-left: 200px; flex: 1; background: var(--bg); }
 
     /* Hero */
-    .hero { background: linear-gradient(135deg, var(--blue), #1a3a6e); color: white; padding: 25px 20px; }
-    .hero h1 { font-size: 1.4rem; color: white; }
-    .hero p { opacity: 0.9; font-size: 0.85rem; margin-top: 3px; }
-    .hero-info { display: flex; gap: 25px; margin-top: 12px; flex-wrap: wrap; }
+    .hero {
+        background: linear-gradient(135deg, rgba(46,80,144,0.9), rgba(26,58,110,0.95)),
+                    url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200&q=80') center/cover;
+        color: white; padding: 40px 20px; text-align: center; position: relative;
+    }
+    .hero h1 { font-size: 1.8rem; color: white; margin-bottom: 5px; }
+    .hero .tagline { opacity: 0.9; font-size: 1rem; margin-bottom: 15px; }
+    .countdown { display: flex; gap: 15px; justify-content: center; margin: 20px 0; }
+    .countdown-item { background: rgba(255,255,255,0.15); padding: 10px 15px; border-radius: 8px; min-width: 70px; }
+    .countdown-item .num { font-size: 1.8rem; font-weight: 700; display: block; }
+    .countdown-item .label { font-size: 0.7rem; text-transform: uppercase; opacity: 0.8; }
+    .hero-info { display: flex; gap: 25px; justify-content: center; flex-wrap: wrap; }
     .hero-info div span:first-child { font-size: 0.65rem; text-transform: uppercase; opacity: 0.7; }
     .hero-info div span:last-child { display: block; font-weight: 600; font-size: 0.9rem; }
+
+    /* Stats Bar */
+    .stats-bar { display: flex; justify-content: center; gap: 40px; padding: 20px; background: var(--dark); color: white; }
+    .stat { text-align: center; }
+    .stat .num { font-size: 1.5rem; font-weight: 700; color: var(--gold); }
+    .stat .label { font-size: 0.7rem; text-transform: uppercase; opacity: 0.7; }
 
     /* Sections */
     section { padding: 20px; border-bottom: 1px solid #eee; }
@@ -197,7 +219,23 @@ def generate_html():
     .network-img { max-width: 100%; height: auto; border-radius: 5px; margin-top: 10px; }
 
     /* Chairs */
-    .chairs { font-size: 0.8rem; color: #555; margin-bottom: 8px; }
+    .chairs { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px; }
+
+    /* Newsletter */
+    .newsletter { background: linear-gradient(135deg, var(--blue), #1a3a6e); color: white; text-align: center; }
+    .newsletter h2 { color: white; justify-content: center; }
+    .newsletter h2::before { background: var(--gold); }
+    .newsletter p { opacity: 0.9; margin-bottom: 15px; }
+    .newsletter-form { display: flex; gap: 10px; max-width: 400px; margin: 0 auto; }
+    .newsletter-form input { flex: 1; padding: 10px; border: none; border-radius: 4px; font-size: 0.85rem; }
+    .newsletter-form button { background: var(--gold); color: var(--dark); border: none; padding: 10px 20px; border-radius: 4px; font-weight: 600; cursor: pointer; }
+    .newsletter-form button:hover { opacity: 0.9; }
+
+    /* Placeholder Sections */
+    .placeholder-section { background: var(--light); text-align: center; }
+    .placeholder-section .coming-soon { color: var(--text-muted); font-style: italic; padding: 30px; }
+    .placeholder-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; opacity: 0.5; }
+    .placeholder-card { background: var(--bg); border: 2px dashed #ccc; border-radius: 8px; padding: 20px; }
 
     @media (max-width: 900px) {
         .sidebar { width: 160px; }
@@ -231,9 +269,12 @@ def generate_html():
             <a href="#committee">Committee</a>
             <a href="#venue">Venue</a>
             <a href="#network">Network</a>
+            <a href="#papers">Accepted Papers</a>
+            <a href="#gallery">Gallery</a>
             <a href="#cfp">Call for Papers</a>
         </nav>
         <a href="#" class="register-btn" onclick="alert('Opens Jan 2026'); return false;">Register</a>
+        <button class="theme-toggle" onclick="toggleTheme()">Toggle Dark Mode</button>
         <div class="info">
             Apr 21-23, 2026<br>
             AUS, Sharjah, UAE<br><br>
@@ -244,13 +285,25 @@ def generate_html():
     <main>
         <section class="hero">
             <h1>AI for Digital Finance Workshop</h1>
-            <p>Swiss-MENA Research Network</p>
+            <p class="tagline">Swiss-MENA Research Network | April 21-23, 2026</p>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item"><span class="num" id="days">---</span><span class="label">Days</span></div>
+                <div class="countdown-item"><span class="num" id="hours">--</span><span class="label">Hours</span></div>
+                <div class="countdown-item"><span class="num" id="mins">--</span><span class="label">Minutes</span></div>
+                <div class="countdown-item"><span class="num" id="secs">--</span><span class="label">Seconds</span></div>
+            </div>
             <div class="hero-info">
-                <div><span>Date</span><span>April 21-23, 2026</span></div>
                 <div><span>Venue</span><span>American University of Sharjah</span></div>
-                <div><span>Participants</span><span>80-100 expected</span></div>
+                <div><span>Location</span><span>Sharjah, UAE</span></div>
             </div>
         </section>
+
+        <div class="stats-bar">
+            <div class="stat"><span class="num" data-target="80">0</span><span class="label">Participants</span></div>
+            <div class="stat"><span class="num" data-target="6">0</span><span class="label">Topics</span></div>
+            <div class="stat"><span class="num" data-target="3">0</span><span class="label">Days</span></div>
+            <div class="stat"><span class="num" data-target="27">0</span><span class="label">Speakers</span></div>
+        </div>
 
         <section id="dates">
             <h2>Important Dates</h2>
@@ -361,6 +414,37 @@ def generate_html():
     html += '''
         </section>
 
+        <section id="papers" class="placeholder-section">
+            <h2>Accepted Papers</h2>
+            <p class="coming-soon">Paper submissions open February 2026. Accepted papers will be listed here after the review process.</p>
+            <div class="placeholder-grid">
+                <div class="placeholder-card">Paper 1</div>
+                <div class="placeholder-card">Paper 2</div>
+                <div class="placeholder-card">Paper 3</div>
+                <div class="placeholder-card">Paper 4</div>
+            </div>
+        </section>
+
+        <section id="gallery" class="placeholder-section">
+            <h2>Photo Gallery</h2>
+            <p class="coming-soon">Photos from the workshop will be shared here after the event in April 2026.</p>
+            <div class="placeholder-grid">
+                <div class="placeholder-card">Photo</div>
+                <div class="placeholder-card">Photo</div>
+                <div class="placeholder-card">Photo</div>
+                <div class="placeholder-card">Photo</div>
+            </div>
+        </section>
+
+        <section id="newsletter" class="newsletter">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to receive updates on speakers, accepted papers, and registration.</p>
+            <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+
         <section id="cfp">
             <h2>Call for Papers</h2>
             <div class="cfp-grid">
@@ -413,6 +497,7 @@ def generate_html():
     </div>
 
     <script>
+        // Modal functions
         function showModal(title, desc) {
             document.getElementById('modalTitle').textContent = title;
             document.getElementById('modalDesc').textContent = desc;
@@ -428,6 +513,71 @@ def generate_html():
             alert('Link copied to clipboard!');
         }
         document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+        // Countdown Timer
+        function updateCountdown() {
+            const target = new Date('2026-04-21T09:00:00+04:00').getTime();
+            const now = new Date().getTime();
+            const diff = target - now;
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const secs = Math.floor((diff % (1000 * 60)) / 1000);
+                document.getElementById('days').textContent = days;
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('mins').textContent = mins.toString().padStart(2, '0');
+                document.getElementById('secs').textContent = secs.toString().padStart(2, '0');
+            } else {
+                document.getElementById('countdown').innerHTML = '<div class="countdown-item"><span class="num">LIVE</span><span class="label">Now</span></div>';
+            }
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Animated Stats
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    document.querySelectorAll('.stat .num').forEach(num => {
+                        const target = parseInt(num.dataset.target);
+                        let current = 0;
+                        const increment = target / 50;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                num.textContent = target + '+';
+                                clearInterval(timer);
+                            } else {
+                                num.textContent = Math.floor(current);
+                            }
+                        }, 30);
+                    });
+                    statsObserver.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+        statsObserver.observe(document.querySelector('.stats-bar'));
+
+        // Dark Mode Toggle
+        function toggleTheme() {
+            const body = document.body;
+            const isDark = body.getAttribute('data-theme') === 'dark';
+            body.setAttribute('data-theme', isDark ? '' : 'dark');
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+        }
+        // Load saved theme
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.setAttribute('data-theme', 'dark');
+        }
+
+        // Newsletter
+        function subscribeNewsletter(e) {
+            e.preventDefault();
+            const email = e.target.querySelector('input').value;
+            alert('Thank you for subscribing! You will receive updates at ' + email);
+            e.target.reset();
+        }
     </script>
 </body>
 </html>'''
