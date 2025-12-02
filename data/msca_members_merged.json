@@ -1,187 +1,235 @@
 {
-  "people": [
+  "source": "https://www.digital-finance-msca.com/our-people",
+  "merged_date": "2025-12-02",
+  "members": [
     {
       "name": "Stephen Chan",
+      "affiliation": "American University of Sharjah, UAE",
       "filename": "stephen_chan.jpg"
     },
     {
       "name": "Giorgos Giannopoulos",
+      "affiliation": "Athena Research Centre, Greece",
       "filename": "giorgos_giannopoulos.jpg"
     },
     {
       "name": "Adrian Bojan",
+      "affiliation": "Raiffeisen Bank, Romania",
       "filename": "adrian_bojan.jpg"
     },
     {
       "name": "Liana Stanca",
+      "affiliation": "Babes-Bolyai University, Romania",
       "filename": "liana_stanca.jpg"
     },
     {
       "name": "Adam Kurpisz",
+      "affiliation": "Athena Research Centre, Greece",
       "filename": "adam_kurpisz.jpg"
     },
     {
       "name": "Joerg Osterrieder",
+      "affiliation": "FHGR, Switzerland",
       "filename": "joerg_osterrieder.jpg"
     },
     {
       "name": "Rebecca Di Francesco",
+      "affiliation": "EIT Digital, EU",
       "filename": "rebecca_di_francesco.jpg"
     },
     {
       "name": "Hanna KristÃ­n SkaftadÃ³ttir",
+      "affiliation": "",
       "filename": "hanna_krist_n_skaftad_ttir.jpg"
     },
     {
       "name": "Adrian Costea",
+      "affiliation": "Bucharest University of Economic Studies, Romania",
       "filename": "adrian_costea.jpg"
     },
     {
       "name": "David Siang-Li Jheng",
+      "affiliation": "Deutsche Bank, Germany",
       "filename": "david_siang_li_jheng.jpg"
     },
     {
       "name": "Altin Kadareja",
+      "affiliation": "Royalton Partners, UK",
       "filename": "altin_kadareja.jpg"
     },
     {
       "name": "Stefano Penazzi",
+      "affiliation": "Cardo AI, Italy",
       "filename": "stefano_penazzi.jpg"
     },
     {
       "name": "Ruting Wang",
+      "affiliation": "Renmin University of China, China",
       "filename": "ruting_wang.jpg"
     },
     {
       "name": "Alberto Ferrario",
+      "affiliation": "Bern University of Applied Sciences, Switzerland",
       "filename": "alberto_ferrario.jpg"
     },
     {
       "name": "Roman Timofeev",
+      "affiliation": "Humboldt University Berlin, Germany",
       "filename": "roman_timofeev.jpg"
     },
     {
       "name": "Stefan Schlamp",
+      "affiliation": "FHGR, Switzerland",
       "filename": "stefan_schlamp.jpg"
     },
     {
       "name": "Daniela Schackis",
+      "affiliation": "FHGR, Switzerland",
       "filename": "daniela_schackis.jpg"
     },
     {
       "name": "Mattia Bellotti",
+      "affiliation": "University of Naples Federico II, Italy",
       "filename": "mattia_bellotti.jpg"
     },
     {
       "name": "Jorg Wenzel",
+      "affiliation": "Royalton Partners, UK",
       "filename": "jorg_wenzel.jpg"
     },
     {
       "name": "Audrius Kabasinskas",
+      "affiliation": "Kaunas University of Technology, Lithuania",
       "filename": "audrius_kabasinskas.jpg"
     },
     {
       "name": "Sandro Schmid",
+      "affiliation": "Bern University of Applied Sciences, Switzerland",
       "filename": "sandro_schmid.jpg"
     },
     {
       "name": "Barbara BÄ™dowska-SÃ³jka",
+      "affiliation": "",
       "filename": "barbara_b_dowska_s_jka.jpg"
     },
     {
       "name": "Axel Gross-Klussmann",
+      "affiliation": "Bern University of Applied Sciences, Switzerland",
       "filename": "axel_gross_klussmann.jpg"
     },
     {
       "name": "Franz Xaver Zobl",
+      "affiliation": "WU Vienna, Austria",
       "filename": "franz_xaver_zobl.jpg"
     },
     {
       "name": "Jeffrey Chu",
+      "affiliation": "University of Manchester, UK",
       "filename": "jeffrey_chu.jpg"
     },
     {
       "name": "Bruno Spilak",
+      "affiliation": "Humboldt University Berlin, Germany",
       "filename": "bruno_spilak.jpg"
     },
     {
       "name": "Anastas Dzurovski",
+      "affiliation": "University of Pristina, Kosovo",
       "filename": "anastas_dzurovski.jpg"
     },
     {
       "name": "Aidas Malakauskas",
+      "affiliation": "Kaunas University of Technology, Lithuania",
       "filename": "aidas_malakauskas.jpg"
     },
     {
       "name": "Gokce Nur Yilmaz",
+      "affiliation": "Kaunas University of Technology, Lithuania",
       "filename": "gokce_nur_yilmaz.jpg"
     },
     {
       "name": "Sabrina Giordano",
+      "affiliation": "University of Calabria, Italy",
       "filename": "sabrina_giordano.jpg"
     },
     {
       "name": "Catarina Silva",
+      "affiliation": "University of Coimbra, Portugal",
       "filename": "catarina_silva.jpg"
     },
     {
       "name": "Owen Chaffard",
+      "affiliation": "LPA Group, Luxembourg",
       "filename": "owen_chaffard.jpg"
     },
     {
       "name": "Claudia Tarantola",
+      "affiliation": "University of Pavia, Italy",
       "filename": "claudia_tarantola.jpg"
     },
     {
       "name": "Alfonso Iodice D'Enza",
+      "affiliation": "University of Naples Federico II, Italy",
       "filename": "alfonso_iodice_d_enza.jpg"
     },
     {
       "name": "Marcella Corduas",
+      "affiliation": "University of Naples Federico II, Italy",
       "filename": "marcella_corduas.jpg"
     },
     {
       "name": "Ioana Coita",
+      "affiliation": "University of Oradea, Romania",
       "filename": "ioana_coita.jpg"
     },
     {
       "name": "Alessandra Tanda",
+      "affiliation": "University of Pavia, Italy",
       "filename": "alessandra_tanda.jpg"
     },
     {
       "name": "Albulena Shala",
+      "affiliation": "University of Pristina, Kosovo",
       "filename": "albulena_shala.jpg"
     },
     {
       "name": "Rezarta Perri",
+      "affiliation": "University of Pristina, Kosovo",
       "filename": "rezarta_perri.jpg"
     },
     {
       "name": "Abhista Abhista",
+      "affiliation": "University of Twente, Netherlands",
       "filename": "abhista_abhista.jpg"
     },
     {
       "name": "Christina Kolb",
+      "affiliation": "WU Vienna, Austria",
       "filename": "christina_kolb.jpg"
     },
     {
       "name": "Fons Wijnhoven",
+      "affiliation": "University of Twente, Netherlands",
       "filename": "fons_wijnhoven.jpg"
     },
     {
       "name": "Laura Spierdijk",
+      "affiliation": "University of Twente, Netherlands",
       "filename": "laura_spierdijk.jpg"
     },
     {
       "name": "Martijn Mes",
+      "affiliation": "University of Twente, Netherlands",
       "filename": "martijn_mes.jpg"
     },
     {
       "name": "Valeri Andreev",
+      "affiliation": "Swedbank, Sweden",
       "filename": "valeri_andreev.jpg"
     },
     {
       "name": "Bettina Grun",
+      "affiliation": "WU Vienna, Austria",
       "filename": "bettina_grun.jpg"
     }
   ]

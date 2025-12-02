@@ -1,187 +1,281 @@
 {
-  "people": [
+  "source": "https://www.digital-finance-msca.com/our-people",
+  "scrape_date": "2025-12-02 08:56:43",
+  "members": [
     {
       "name": "Stephen Chan",
+      "affiliation": "",
+      "bio": "",
       "filename": "stephen_chan.jpg"
     },
     {
       "name": "Giorgos Giannopoulos",
+      "affiliation": "",
+      "bio": "",
       "filename": "giorgos_giannopoulos.jpg"
     },
     {
       "name": "Adrian Bojan",
+      "affiliation": "",
+      "bio": "",
       "filename": "adrian_bojan.jpg"
     },
     {
       "name": "Liana Stanca",
+      "affiliation": "",
+      "bio": "",
       "filename": "liana_stanca.jpg"
     },
     {
       "name": "Adam Kurpisz",
+      "affiliation": "",
+      "bio": "",
       "filename": "adam_kurpisz.jpg"
     },
     {
       "name": "Joerg Osterrieder",
+      "affiliation": "",
+      "bio": "",
       "filename": "joerg_osterrieder.jpg"
     },
     {
       "name": "Rebecca Di Francesco",
+      "affiliation": "",
+      "bio": "",
       "filename": "rebecca_di_francesco.jpg"
     },
     {
-      "name": "Hanna KristÃ­n SkaftadÃ³ttir",
+      "name": "Hanna Kristín Skaftadóttir",
+      "affiliation": "",
+      "bio": "",
       "filename": "hanna_krist_n_skaftad_ttir.jpg"
     },
     {
       "name": "Adrian Costea",
+      "affiliation": "",
+      "bio": "",
       "filename": "adrian_costea.jpg"
     },
     {
       "name": "David Siang-Li Jheng",
+      "affiliation": "",
+      "bio": "",
       "filename": "david_siang_li_jheng.jpg"
     },
     {
       "name": "Altin Kadareja",
+      "affiliation": "",
+      "bio": "",
       "filename": "altin_kadareja.jpg"
     },
     {
       "name": "Stefano Penazzi",
+      "affiliation": "",
+      "bio": "",
       "filename": "stefano_penazzi.jpg"
     },
     {
       "name": "Ruting Wang",
+      "affiliation": "",
+      "bio": "",
       "filename": "ruting_wang.jpg"
     },
     {
       "name": "Alberto Ferrario",
+      "affiliation": "",
+      "bio": "",
       "filename": "alberto_ferrario.jpg"
     },
     {
       "name": "Roman Timofeev",
+      "affiliation": "",
+      "bio": "",
       "filename": "roman_timofeev.jpg"
     },
     {
       "name": "Stefan Schlamp",
+      "affiliation": "",
+      "bio": "",
       "filename": "stefan_schlamp.jpg"
     },
     {
       "name": "Daniela Schackis",
+      "affiliation": "",
+      "bio": "",
       "filename": "daniela_schackis.jpg"
     },
     {
       "name": "Mattia Bellotti",
+      "affiliation": "",
+      "bio": "",
       "filename": "mattia_bellotti.jpg"
     },
     {
       "name": "Jorg Wenzel",
+      "affiliation": "",
+      "bio": "",
       "filename": "jorg_wenzel.jpg"
     },
     {
       "name": "Audrius Kabasinskas",
+      "affiliation": "",
+      "bio": "",
       "filename": "audrius_kabasinskas.jpg"
     },
     {
       "name": "Sandro Schmid",
+      "affiliation": "",
+      "bio": "",
       "filename": "sandro_schmid.jpg"
     },
     {
-      "name": "Barbara BÄ™dowska-SÃ³jka",
+      "name": "Barbara Będowska-Sójka",
+      "affiliation": "",
+      "bio": "",
       "filename": "barbara_b_dowska_s_jka.jpg"
     },
     {
       "name": "Axel Gross-Klussmann",
+      "affiliation": "",
+      "bio": "",
       "filename": "axel_gross_klussmann.jpg"
     },
     {
       "name": "Franz Xaver Zobl",
+      "affiliation": "",
+      "bio": "",
       "filename": "franz_xaver_zobl.jpg"
     },
     {
       "name": "Jeffrey Chu",
+      "affiliation": "",
+      "bio": "",
       "filename": "jeffrey_chu.jpg"
     },
     {
       "name": "Bruno Spilak",
+      "affiliation": "",
+      "bio": "",
       "filename": "bruno_spilak.jpg"
     },
     {
       "name": "Anastas Dzurovski",
+      "affiliation": "",
+      "bio": "",
       "filename": "anastas_dzurovski.jpg"
     },
     {
       "name": "Aidas Malakauskas",
+      "affiliation": "",
+      "bio": "",
       "filename": "aidas_malakauskas.jpg"
     },
     {
       "name": "Gokce Nur Yilmaz",
+      "affiliation": "",
+      "bio": "",
       "filename": "gokce_nur_yilmaz.jpg"
     },
     {
       "name": "Sabrina Giordano",
+      "affiliation": "",
+      "bio": "",
       "filename": "sabrina_giordano.jpg"
     },
     {
       "name": "Catarina Silva",
+      "affiliation": "",
+      "bio": "",
       "filename": "catarina_silva.jpg"
     },
     {
       "name": "Owen Chaffard",
+      "affiliation": "",
+      "bio": "",
       "filename": "owen_chaffard.jpg"
     },
     {
       "name": "Claudia Tarantola",
+      "affiliation": "",
+      "bio": "",
       "filename": "claudia_tarantola.jpg"
     },
     {
       "name": "Alfonso Iodice D'Enza",
+      "affiliation": "",
+      "bio": "",
       "filename": "alfonso_iodice_d_enza.jpg"
     },
     {
       "name": "Marcella Corduas",
+      "affiliation": "",
+      "bio": "",
       "filename": "marcella_corduas.jpg"
     },
     {
       "name": "Ioana Coita",
+      "affiliation": "",
+      "bio": "",
       "filename": "ioana_coita.jpg"
     },
     {
       "name": "Alessandra Tanda",
+      "affiliation": "",
+      "bio": "",
       "filename": "alessandra_tanda.jpg"
     },
     {
       "name": "Albulena Shala",
+      "affiliation": "",
+      "bio": "",
       "filename": "albulena_shala.jpg"
     },
     {
       "name": "Rezarta Perri",
+      "affiliation": "",
+      "bio": "",
       "filename": "rezarta_perri.jpg"
     },
     {
       "name": "Abhista Abhista",
+      "affiliation": "",
+      "bio": "",
       "filename": "abhista_abhista.jpg"
     },
     {
       "name": "Christina Kolb",
+      "affiliation": "",
+      "bio": "",
       "filename": "christina_kolb.jpg"
     },
     {
       "name": "Fons Wijnhoven",
+      "affiliation": "",
+      "bio": "",
       "filename": "fons_wijnhoven.jpg"
     },
     {
       "name": "Laura Spierdijk",
+      "affiliation": "",
+      "bio": "",
       "filename": "laura_spierdijk.jpg"
     },
     {
       "name": "Martijn Mes",
+      "affiliation": "",
+      "bio": "",
       "filename": "martijn_mes.jpg"
     },
     {
       "name": "Valeri Andreev",
+      "affiliation": "",
+      "bio": "",
       "filename": "valeri_andreev.jpg"
     },
     {
       "name": "Bettina Grun",
+      "affiliation": "",
+      "bio": "",
       "filename": "bettina_grun.jpg"
     }
   ]
