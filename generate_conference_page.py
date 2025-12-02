@@ -225,13 +225,13 @@ def generate_html():
         <div class="subtitle">Swiss-MENA Workshop 2026</div>
         <nav>
             <a href="#dates">Important Dates</a>
-            <a href="#cfp">Call for Papers</a>
             <a href="#topics">Topics</a>
             <a href="#keynotes">Keynotes</a>
             <a href="#program">Program</a>
             <a href="#committee">Committee</a>
             <a href="#venue">Venue</a>
             <a href="#network">Network</a>
+            <a href="#cfp">Call for Papers</a>
         </nav>
         <a href="#" class="register-btn" onclick="alert('Opens Jan 2026'); return false;">Register</a>
         <div class="info">
@@ -260,32 +260,6 @@ def generate_html():
         html += f'<div class="date-item"><div class="label">{label}</div><div class="value">{date}</div></div>'
 
     html += '''
-            </div>
-        </section>
-
-        <section id="cfp">
-            <h2>Call for Papers</h2>
-            <div class="cfp-grid">
-                <div class="cfp-box">
-                    <h4>Submission Guidelines</h4>
-                    <ul>
-                        <li>Extended abstract: 2-4 pages</li>
-                        <li>Full paper: 8-12 pages</li>
-                        <li>Format: PDF, double-column</li>
-                        <li>Blind review process</li>
-                    </ul>
-                </div>
-                <div class="cfp-box">
-                    <h4>Key Deadlines</h4>
-                    <ul>
-                        <li>Submission: February 15, 2026</li>
-                        <li>Notification: March 1, 2026</li>
-                        <li>Camera-ready: March 15, 2026</li>
-                    </ul>
-                </div>
-            </div>
-            <div style="text-align:center;margin-top:15px;">
-                <a href="mailto:submissions@ai-digital-finance.org" class="cfp-btn">Submit Paper</a>
             </div>
         </section>
 
@@ -385,6 +359,32 @@ def generate_html():
         html += f'<img src="{network_map}" alt="Network" class="network-img">'
 
     html += '''
+        </section>
+
+        <section id="cfp">
+            <h2>Call for Papers</h2>
+            <div class="cfp-grid">
+                <div class="cfp-box">
+                    <h4>Submission Guidelines</h4>
+                    <ul>
+                        <li>Extended abstract: 2-4 pages</li>
+                        <li>Full paper: 8-12 pages</li>
+                        <li>Format: PDF, double-column</li>
+                        <li>Blind review process</li>
+                    </ul>
+                </div>
+                <div class="cfp-box">
+                    <h4>Key Deadlines</h4>
+                    <ul>
+                        <li>Submission: February 15, 2026</li>
+                        <li>Notification: March 1, 2026</li>
+                        <li>Camera-ready: March 15, 2026</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:15px;">
+                <a href="mailto:submissions@ai-digital-finance.org" class="cfp-btn">Submit Paper</a>
+            </div>
         </section>
 
         <div class="share-bar">
