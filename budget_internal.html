@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Details (Internal) | AI for Digital Finance</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --swiss-blue: #2E5090;
+            --uae-burgundy: #8B1538;
+            --gold: #D4AF37;
+            --dark-gray: #333333;
+            --light-gray: #f8f9fa;
+            --border-gray: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--swiss-blue);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+
+        nav a:hover {
+            opacity: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--swiss-blue) 0%, #1a3a6e 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .hero-details {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .hero-detail {
+            text-align: center;
+        }
+
+        .hero-detail .label {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-detail .value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 0;
+        }
+
+        section:nth-child(even) {
+            background: var(--light-gray);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--swiss-blue);
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--gold);
+            display: inline-block;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: var(--dark-gray);
+            margin: 25px 0 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--swiss-blue);
+        }
+
+        .stat-card .number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--swiss-blue);
+        }
+
+        .stat-card .label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Aims List */
+        .aims-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .aim-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .aim-item h4 {
+            color: var(--swiss-blue);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .aim-item p {
+            font-size: 0.95rem;
+            color: #555;
+            margin: 0;
+        }
+
+        /* Schedule */
+        .schedule-day {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .day-header {
+            background: var(--swiss-blue);
+            color: white;
+            padding: 15px 20px;
+        }
+
+        .day-header h3 {
+            color: white;
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .day-header .date {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .session {
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--border-gray);
+            display: flex;
+            gap: 20px;
+        }
+
+        .session:last-child {
+            border-bottom: none;
+        }
+
+        .session-time {
+            min-width: 100px;
+            font-weight: 600;
+            color: var(--swiss-blue);
+            font-size: 0.9rem;
+        }
+
+        .session-content {
+            flex: 1;
+        }
+
+        .session-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .session-speaker {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .session-type {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-left: 10px;
+        }
+
+        .session-type.keynote {
+            background: var(--gold);
+            color: white;
+        }
+
+        .session-type.panel {
+            background: var(--uae-burgundy);
+            color: white;
+        }
+
+        .session-type.workshop {
+            background: var(--swiss-blue);
+            color: white;
+        }
+
+        .session-type.break {
+            background: #e0e0e0;
+            color: #666;
+        }
+
+        /* Organizers */
+        .organizers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+        }
+
+        .organizer-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .organizer-card h3 {
+            color: var(--swiss-blue);
+            margin-top: 0;
+        }
+
+        .organizer-card .affiliation {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .organizer-card .bio {
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .organizer-card .highlights {
+            list-style: none;
+            padding: 0;
+        }
+
+        .organizer-card .highlights li {
+            padding: 5px 0;
+            font-size: 0.9rem;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .organizer-card .highlights li::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+            color: var(--swiss-blue);
+            font-weight: bold;
+        }
+
+        /* Network Map */
+        .network-map {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .network-map img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Publications Table */
+        .publications-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        .publications-table th {
+            background: var(--swiss-blue);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .publications-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-gray);
+        }
+
+        .publications-table tr:hover {
+            background: var(--light-gray);
+        }
+
+        .publications-table a {
+            color: var(--swiss-blue);
+            text-decoration: none;
+        }
+
+        .publications-table a:hover {
+            text-decoration: underline;
+        }
+
+        /* Budget Section */
+        .budget-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .chart-container h4 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+        }
+
+        .budget-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            font-size: 0.9rem;
+        }
+
+        .budget-table th {
+            background: var(--swiss-blue);
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .budget-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-gray);
+        }
+
+        .budget-table tr.subtotal {
+            background: var(--light-gray);
+            font-weight: 600;
+        }
+
+        .budget-table tr.total {
+            background: var(--swiss-blue);
+            color: white;
+            font-weight: 700;
+        }
+
+        .budget-table .amount {
+            text-align: right;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Timeline/Gantt */
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+        }
+
+        .timeline-phase {
+            margin-bottom: 40px;
+        }
+
+        .phase-header {
+            background: var(--swiss-blue);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px 8px 0 0;
+            font-weight: 600;
+        }
+
+        .phase-content {
+            background: white;
+            border: 1px solid var(--border-gray);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            padding: 20px;
+        }
+
+        .milestone {
+            display: flex;
+            align-items: flex-start;
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--border-gray);
+        }
+
+        .milestone:last-child {
+            border-bottom: none;
+        }
+
+        .milestone-date {
+            min-width: 120px;
+            font-weight: 600;
+            color: var(--swiss-blue);
+            font-size: 0.9rem;
+        }
+
+        .milestone-content {
+            flex: 1;
+        }
+
+        .milestone-title {
+            font-weight: 600;
+        }
+
+        .milestone-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 3px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-gray);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-contacts {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 20px;
+        }
+
+        .footer-contact {
+            text-align: center;
+        }
+
+        .footer-contact .name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        /* Internal warning banner */
+        .internal-banner {
+            background: #dc3545;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Topics Grid */
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .topic-card {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--gold);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .topic-card h4 {
+            color: var(--swiss-blue);
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .topic-card p {
+            font-size: 0.95rem;
+            color: #555;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Scientific Committee Grid */
+        .committee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .committee-member {
+            text-align: center;
+            padding: 15px;
+        }
+
+        .committee-member .name {
+            font-weight: 600;
+            color: var(--dark-gray);
+            font-size: 0.95rem;
+        }
+
+        .committee-member .affiliation {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Venue Section */
+        .venue-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .venue-info {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .venue-info h3 {
+            color: var(--swiss-blue);
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .venue-info .location {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .venue-features {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .venue-features li {
+            padding: 8px 0;
+            font-size: 0.95rem;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .venue-features li::before {
+            content: "*";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        .venue-map {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .venue-map iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 350px;
+            border: none;
+        }
+
+        /* Keynote Speakers */
+        .keynotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .keynote-card {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            text-align: center;
+            border-bottom: 4px solid var(--swiss-blue);
+        }
+
+        .keynote-card .placeholder-img {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--swiss-blue) 0%, #1a3a6e 100%);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .keynote-card h4 {
+            color: var(--dark-gray);
+            margin-bottom: 5px;
+        }
+
+        .keynote-card .role {
+            color: var(--swiss-blue);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .keynote-card .talk-title {
+            font-style: italic;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Important Dates */
+        .dates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .date-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--gold);
+        }
+
+        .date-card .date-label {
+            font-size: 0.9rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .date-card .date-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--swiss-blue);
+            margin-top: 10px;
+        }
+
+        /* Registration Section */
+        .registration-cta {
+            background: linear-gradient(135deg, var(--swiss-blue) 0%, #1a3a6e 100%);
+            padding: 60px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .registration-cta h2 {
+            color: white;
+            border-bottom-color: var(--gold);
+        }
+
+        .registration-cta p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .register-button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--dark-gray);
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .register-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Committee with photos */
+        .committee-member img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 3px solid var(--swiss-blue);
+        }
+
+        .committee-member .initials {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--swiss-blue) 0%, #1a3a6e 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .budget-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .organizers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .venue-container {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .session {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .committee-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Internal Warning Banner -->
+    <div class="internal-banner">
+        INTERNAL DOCUMENT - NOT FOR PUBLIC DISTRIBUTION
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">AI for Digital Finance - Budget</div>
+            <ul>
+                <li><a href="ai_digital_finance.html">Back to Public Page</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="padding: 50px 0;">
+        <div class="container">
+            <h1>Budget Overview</h1>
+            <p class="subtitle">Internal Document - CCG Grant Application</p>
+            <div class="hero-details">
+                <div class="hero-detail">
+                    <div class="label">Total Budget</div>
+                    <div class="value">CHF 18,000</div>
+                </div>
+                <div class="hero-detail">
+                    <div class="label">CCG Request</div>
+                    <div class="value">CHF 5,000</div>
+                </div>
+                <div class="hero-detail">
+                    <div class="label">Co-funding Rate</div>
+                    <div class="value">72%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Budget Charts -->
+    <section id="charts">
+        <div class="container">
+            <h2>Funding Overview</h2>
+            <p>The CCG request of CHF 5,000 (28%) is complemented by substantial co-funding from Swiss and MENA partners (72%).</p>
+
+            <div class="budget-grid">
+                <div class="chart-container">
+                    <h4>Funding Sources</h4>
+                    <canvas id="fundingChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h4>Budget by Partner</h4>
+                    <canvas id="partnerChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Budget -->
+    <section id="details">
+        <div class="container">
+            <h2>Detailed Budget Breakdown</h2>
+
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Type</th>
+                        <th class="amount">Amount (CHF)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" style="background: var(--swiss-blue); color: white; font-weight: 600;">Swiss Partners</td>
+                    </tr>
+                    <tr>
+                        <td>Travel</td>
+                        <td>Travel costs for Swiss participants to UAE</td>
+                        <td>CCG Request</td>
+                        <td class="amount">2,640</td>
+                    </tr>
+                    <tr>
+                        <td>Work Costs</td>
+                        <td>Workshop preparation and coordination</td>
+                        <td>In-kind</td>
+                        <td class="amount">2,500</td>
+                    </tr>
+                    <tr class="subtotal">
+                        <td colspan="3">Swiss Partners Subtotal</td>
+                        <td class="amount">5,140</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="background: var(--uae-burgundy); color: white; font-weight: 600;">MENA Partners</td>
+                    </tr>
+                    <tr>
+                        <td>Event Costs</td>
+                        <td>Venue, equipment, catering</td>
+                        <td>CCG Request</td>
+                        <td class="amount">2,360</td>
+                    </tr>
+                    <tr>
+                        <td>Event Costs</td>
+                        <td>Additional venue and logistics support</td>
+                        <td>In-kind</td>
+                        <td class="amount">4,900</td>
+                    </tr>
+                    <tr>
+                        <td>Work Costs</td>
+                        <td>Local coordination and administration</td>
+                        <td>In-kind</td>
+                        <td class="amount">5,000</td>
+                    </tr>
+                    <tr>
+                        <td>Publication</td>
+                        <td>Post-workshop publication costs</td>
+                        <td>In-kind</td>
+                        <td class="amount">600</td>
+                    </tr>
+                    <tr class="subtotal">
+                        <td colspan="3">MENA Partners Subtotal</td>
+                        <td class="amount">12,860</td>
+                    </tr>
+                    <tr class="total">
+                        <td colspan="3">TOTAL PROJECT BUDGET</td>
+                        <td class="amount">18,000</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Funding Summary</h3>
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>Funding Source</th>
+                        <th class="amount">Amount (CHF)</th>
+                        <th class="amount">Percentage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CCG Request</td>
+                        <td class="amount">5,000</td>
+                        <td class="amount">27.8%</td>
+                    </tr>
+                    <tr>
+                        <td>Co-funding (In-kind)</td>
+                        <td class="amount">13,000</td>
+                        <td class="amount">72.2%</td>
+                    </tr>
+                    <tr class="total">
+                        <td>Total</td>
+                        <td class="amount">18,000</td>
+                        <td class="amount">100%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>CCG Compliance Check</h3>
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>Requirement</th>
+                        <th>Limit</th>
+                        <th>Actual</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Maximum CCG for workshops</td>
+                        <td>CHF 5,000</td>
+                        <td>CHF 5,000</td>
+                        <td style="color: green; font-weight: bold;">OK</td>
+                    </tr>
+                    <tr>
+                        <td>Maximum work costs</td>
+                        <td>20%</td>
+                        <td>~14%</td>
+                        <td style="color: green; font-weight: bold;">OK</td>
+                    </tr>
+                    <tr>
+                        <td>Co-funding required</td>
+                        <td>Yes</td>
+                        <td>72%</td>
+                        <td style="color: green; font-weight: bold;">OK</td>
+                    </tr>
+                    <tr>
+                        <td>MENA partner contribution</td>
+                        <td>Required</td>
+                        <td>CHF 12,860</td>
+                        <td style="color: green; font-weight: bold;">OK</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p style="color: #ff6b6b; font-weight: bold;">INTERNAL DOCUMENT - NOT FOR PUBLIC DISTRIBUTION</p>
+            <p style="margin-top: 15px;">AI for Digital Finance: Swiss-MENA Research Network</p>
+            <p><a href="ai_digital_finance.html">Return to Public Page</a></p>
+        </div>
+    </footer>
+
+    <!-- Chart.js Scripts -->
+    <script>
+        // Funding Sources Pie Chart
+        const fundingCtx = document.getElementById('fundingChart').getContext('2d');
+        new Chart(fundingCtx, {
+            type: 'pie',
+            data: {
+                labels: ['CCG Request', 'Co-funding (In-kind)'],
+                datasets: [{
+                    data: [5000, 13000],
+                    backgroundColor: ['#2E5090', '#D4AF37'],
+                    borderWidth: 2,
+                    borderColor: '#ffffff'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const value = context.raw;
+                                const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                const percentage = ((value / total) * 100).toFixed(1);
+                                return `CHF ${value.toLocaleString()} (${percentage}%)`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Partner Budget Bar Chart
+        const partnerCtx = document.getElementById('partnerChart').getContext('2d');
+        new Chart(partnerCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Swiss Partners', 'MENA Partners'],
+                datasets: [
+                    {
+                        label: 'CCG Request',
+                        data: [2640, 2360],
+                        backgroundColor: '#2E5090'
+                    },
+                    {
+                        label: 'In-kind',
+                        data: [2500, 10500],
+                        backgroundColor: '#D4AF37'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        stacked: true
+                    },
+                    y: {
+                        stacked: true,
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return 'CHF ' + value.toLocaleString();
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.dataset.label}: CHF ${context.raw.toLocaleString()}`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
