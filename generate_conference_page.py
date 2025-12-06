@@ -80,8 +80,7 @@ PARTNERS = [
     ("AUS", "American University of Sharjah", "https://www.aus.edu", "UAE", "aus.svg"),
     ("Manchester", "University of Manchester", "https://www.manchester.ac.uk", "UK", "manchester.svg"),
     ("Renmin", "Renmin University of China", "https://www.ruc.edu.cn", "CN", "renmin.svg"),
-    ("Babes-Bolyai", "Babes-Bolyai University", "https://www.ubbcluj.ro", "RO", "babes_bolyai.svg"),
-    ("BFH", "Bern University of Applied Sciences", "https://www.bfh.ch", "CH", "bfh.svg")
+    ("Babes-Bolyai", "Babes-Bolyai University", "https://www.ubbcluj.ro", "RO", "babes_bolyai.svg")
 ]
 
 # SVG Logo (inline)
