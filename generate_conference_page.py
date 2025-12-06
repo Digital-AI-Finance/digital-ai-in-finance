@@ -46,12 +46,6 @@ TOPICS = [
     ("Alternative Data", "topic_altdata.html")
 ]
 
-KEYNOTES = [
-    ("TBC", "Keynote Speaker 1", "Institution TBC", "Talk title to be announced"),
-    ("TBC", "Keynote Speaker 2", "Institution TBC", "Talk title to be announced"),
-    ("TBC", "Keynote Speaker 3", "Institution TBC", "Talk title to be announced")
-]
-
 SESSIONS = {
     "Opening & Keynote": "Welcome address by conference chairs followed by the opening keynote on AI transformation in MENA financial markets.",
     "Panel: LLMs": "Industry-academia panel discussing practical applications of Large Language Models in banking and investment management.",
@@ -351,14 +345,11 @@ def generate_html():
         <nav>
             <a href="#dates">Important Dates</a>
             <a href="#topics">Topics</a>
-            <a href="#keynotes">Keynotes</a>
             <a href="#program">Program</a>
             <a href="#committee">Committee</a>
             <a href="#venue">Venue</a>
             <a href="#network">Network</a>
             <a href="#partners">Partners</a>
-            <a href="#papers">Accepted Papers</a>
-            <a href="#gallery">Gallery</a>
             <a href="#cfp">Call for Papers</a>
         </nav>
         <a href="#" class="register-btn" onclick="alert('Opens Jan 2026'); return false;">Register</a>
@@ -410,22 +401,6 @@ def generate_html():
 
     for topic_name, topic_url in TOPICS:
         html += f'<a href="{topic_url}" class="topic">{topic_name}</a>'
-
-    html += '''
-            </div>
-        </section>
-
-        <section id="keynotes">
-            <h2>Keynote Speakers</h2>
-            <div class="keynotes">'''
-
-    for initials, name, inst, talk in KEYNOTES:
-        html += f'''<div class="keynote">
-                <div class="keynote-photo">{initials}</div>
-                <div class="name">{name}</div>
-                <div class="inst">{inst}</div>
-                <div class="talk">{talk}</div>
-            </div>'''
 
     html += '''
             </div>
@@ -514,28 +489,6 @@ def generate_html():
             </a>'''
 
     html += '''
-            </div>
-        </section>
-
-        <section id="papers" class="placeholder-section">
-            <h2>Accepted Papers</h2>
-            <p class="coming-soon">Paper submissions open February 2026. Accepted papers will be listed here after the review process.</p>
-            <div class="placeholder-grid">
-                <div class="placeholder-card">Paper 1</div>
-                <div class="placeholder-card">Paper 2</div>
-                <div class="placeholder-card">Paper 3</div>
-                <div class="placeholder-card">Paper 4</div>
-            </div>
-        </section>
-
-        <section id="gallery" class="placeholder-section">
-            <h2>Photo Gallery</h2>
-            <p class="coming-soon">Photos from the workshop will be shared here after the event in April 2026.</p>
-            <div class="placeholder-grid">
-                <div class="placeholder-card">Photo</div>
-                <div class="placeholder-card">Photo</div>
-                <div class="placeholder-card">Photo</div>
-                <div class="placeholder-card">Photo</div>
             </div>
         </section>
 
