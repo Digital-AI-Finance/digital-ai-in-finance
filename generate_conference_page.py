@@ -11,6 +11,7 @@ DATA_DIR = BASE_DIR / "data"
 DOCS_DIR = BASE_DIR / "docs"
 IMAGES_DIR = DOCS_DIR / "images"
 PEOPLE_ASSETS_DIR = BASE_DIR / "assets" / "people"
+LOGOS_DIR = BASE_DIR / "assets" / "logos"
 OUTPUT_FILE = BASE_DIR / "index.html"
 
 def load_json(filepath):
@@ -28,6 +29,13 @@ def load_image_base64(filepath):
                 ext = filepath.suffix.lower()
                 mime = 'image/png' if ext == '.png' else 'image/jpeg'
                 return f"data:{mime};base64,{base64.b64encode(f.read()).decode('utf-8')}"
+    return None
+
+def load_svg(filepath):
+    """Load SVG file content"""
+    if filepath.exists():
+        with open(filepath, 'r', encoding='utf-8') as f:
+            return f.read()
     return None
 
 DATES = [
@@ -68,12 +76,12 @@ PROGRAM = [
 ]
 
 PARTNERS = [
-    ("FHGR", "Fachhochschule Graubunden", "https://www.fhgr.ch", "CH"),
-    ("AUS", "American University of Sharjah", "https://www.aus.edu", "UAE"),
-    ("Manchester", "University of Manchester", "https://www.manchester.ac.uk", "UK"),
-    ("Renmin", "Renmin University of China", "https://www.ruc.edu.cn", "CN"),
-    ("Babes-Bolyai", "Babes-Bolyai University", "https://www.ubbcluj.ro", "RO"),
-    ("BFH", "Bern University of Applied Sciences", "https://www.bfh.ch", "CH")
+    ("FHGR", "Fachhochschule Graubunden", "https://www.fhgr.ch", "CH", "fhgr.svg"),
+    ("AUS", "American University of Sharjah", "https://www.aus.edu", "UAE", "aus.svg"),
+    ("Manchester", "University of Manchester", "https://www.manchester.ac.uk", "UK", "manchester.svg"),
+    ("Renmin", "Renmin University of China", "https://www.ruc.edu.cn", "CN", "renmin.svg"),
+    ("Babes-Bolyai", "Babes-Bolyai University", "https://www.ubbcluj.ro", "RO", "babes_bolyai.svg"),
+    ("BFH", "Bern University of Applied Sciences", "https://www.bfh.ch", "CH", "bfh.svg")
 ]
 
 # SVG Logo (inline)
@@ -268,10 +276,11 @@ def generate_html():
 
     /* Partner Logos */
     .partners-grid { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 15px; }
-    .partner { background: white; padding: 10px 15px; border-radius: 5px; text-decoration: none; text-align: center; transition: transform 0.2s, box-shadow 0.2s; border: 1px solid #ddd; min-width: 100px; }
+    .partner { background: white; padding: 12px 15px; border-radius: 5px; text-decoration: none; text-align: center; transition: transform 0.2s, box-shadow 0.2s; border: 1px solid #ddd; min-width: 110px; }
     .partner:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-    .partner .abbr { font-weight: 700; color: var(--blue); font-size: 1rem; }
-    .partner .country { font-size: 0.65rem; color: var(--gold); font-weight: 600; }
+    .partner .logo { width: 80px; height: 40px; margin: 0 auto 5px; }
+    .partner .logo svg { width: 100%; height: 100%; }
+    .partner .country { font-size: 0.65rem; color: var(--gold); font-weight: 600; margin-top: 5px; }
     .partner .name { font-size: 0.6rem; color: #666; margin-top: 2px; }
 
     @media (max-width: 900px) {
@@ -481,9 +490,14 @@ def generate_html():
             <h2>Partner Institutions</h2>
             <div class="partners-grid">'''
 
-    for abbr, name, url, country in PARTNERS:
+    for abbr, name, url, country, logo_file in PARTNERS:
+        logo_svg = load_svg(LOGOS_DIR / logo_file)
+        if logo_svg:
+            logo_html = f'<div class="logo">{logo_svg}</div>'
+        else:
+            logo_html = f'<div class="logo" style="line-height:40px;font-weight:700;color:#2E5090;">{abbr}</div>'
         html += f'''<a href="{url}" target="_blank" class="partner">
-                <div class="abbr">{abbr}</div>
+                {logo_html}
                 <div class="country">{country}</div>
                 <div class="name">{name}</div>
             </a>'''
