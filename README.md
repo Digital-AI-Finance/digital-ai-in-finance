@@ -57,3 +57,21 @@ The `archive/` folder contains working drafts, scripts, and intermediate files u
 
 - Prof. Joerg Osterrieder: joerg.osterrieder@fhgr.ch
 - Prof. Stephen Chan: schan@aus.edu
+
+## Description
+
+CCG application for AI for Digital Finance workshop - Swiss-MENA Research Network
+
+
+## Installation
+
+```bash
+git clone https://github.com/Digital-AI-Finance/digital-ai-in-finance.git
+cd digital-ai-in-finance
+pip install -r requirements.txt
+```
+
+
+## Usage
+
+See the repository contents for usage examples.
